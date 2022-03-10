@@ -1,0 +1,40 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity half_adder_tester is
+
+	port
+	(
+		-- Input ports
+		SW0	: in  std_logic;
+		SW1	: in  std_logic;
+		
+
+		-- Output ports
+		LEDR0, LEDR1	: out std_logic
+	);
+end half_adder_tester;
+
+architecture half_adder_tester_impl of half_adder_tester is
+
+	-- Declarations (optional)
+
+begin
+
+-- To instantiate an entity directly, the entity must be written in VHDL.
+-- You must also add the file containing the entity declaration to your 
+-- Quartus II project.
+DUT: entity work.half_adder_dataflow(half_adder_dataflow)
+	
+	port map 
+	(
+		A => SW0,
+		B => SW1,
+		Sum => LEDR0,
+		Cout=> LEDR1
+	);
+
+
+
+end half_adder_tester_impl;

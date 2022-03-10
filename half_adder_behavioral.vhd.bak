@@ -1,0 +1,27 @@
+
+--Entity declaration for half adder
+
+entity half_adder_behavioral is
+	port(a,b: in std_logic;
+	sum, carry: out std_logic);
+end half_adder_behavioral
+
+architecture behavioral of half_adder_behavioral is
+	begin 
+	ha: process(a,b)
+	
+	if (a = '1' and b = '0')  or (a = '0' and b = '1') then
+		sum <= '1';
+		carry <= '0';
+	
+	else if (a = '1' and b = '1') then
+		sum <= '0';
+		carry <= '1';
+	
+	else 
+		sum <= '0';
+		carry <= '0';
+	
+	end if;	
+		
+	
