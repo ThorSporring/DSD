@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C35F672) Path("C:/altera/13.0sp1/DSD/exercise3_template_restored/") File("exercise3.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C35F672) Path("C:/Users/spott/OneDrive - Aarhus Universitet/Dokumenter/GitHub/DSD/exercise3_template_restored/") File("exercise3.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

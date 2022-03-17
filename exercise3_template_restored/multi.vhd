@@ -10,8 +10,8 @@ generic -- mulig anvendelse af "generic"
 	);
     port
     (
-        A : in std_logic_vector (7 downto 0),
-        B : in std_logic_vector (7 downto 0),
+        A : in std_logic_vector (7 downto 0);
+        B : in std_logic_vector (7 downto 0);
         Prod : out std_logic_vector (N downto 0)
     );
 end multi;

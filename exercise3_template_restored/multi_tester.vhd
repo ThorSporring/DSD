@@ -9,10 +9,10 @@ entity multi_tester is
     (
 
         --input port
-        SW : in std_logic_vector(15 downto 0),
+        SW : in std_logic_vector(15 downto 0);
 
         --output port
-        LEDR : out in std_logic_vector(15 downto 0)
+        LEDR : out std_logic_vector(15 downto 0)
     );
 end multi_tester;
 
@@ -22,11 +22,11 @@ begin
     --Følgende er en implementering af multiplieren. switch 0 - 7
     --sættes til input A, og switch 8 - 15 sættes til input B
     --Prod output sættes til LEDR 0 - 15
-    mt: entity work.multi(multi_impl) port map(
+    mut: entity work.multi(multi_impl) port map(
     --input
         A => SW (7 downto 0),
-        B => SW (15 downto 8),
-    --ouput 
-        prod => (15 downto 0)
-    );
+		  B => SW (15 downto 8),
+    --output 
+		  Prod => LEDR(15 downto 0)
+		  );
 end multi_tester_impl; 
