@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Analysis & Synthesis Status : Successful - Tue Mar 29 12:18:42 2022
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : Exercise_5_6
@@ -8,6 +9,18 @@ Total logic elements : 71
     Dedicated logic registers : 0
 Total registers : 0
 Total pins : 25
+=======
+Analysis & Synthesis Status : Successful - Tue Mar 29 11:48:04 2022
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : Exercise_5_6
+Top-level Entity Name : One_digit_clock_tester
+Family : Cyclone II
+Total logic elements : 163
+    Total combinational functions : 163
+    Dedicated logic registers : 66
+Total registers : 66
+Total pins : 16
+>>>>>>> Stashed changes
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

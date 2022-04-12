@@ -2,6 +2,7 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+<<<<<<< Updated upstream
 Type  : Slow Model Minimum Pulse Width 'KEY[0]'
 Slack : -1.222
 TNS   : -1.222
@@ -9,5 +10,54 @@ TNS   : -1.222
 Type  : Fast Model Minimum Pulse Width 'KEY[0]'
 Slack : -1.222
 TNS   : -1.222
+=======
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -6.173
+TNS   : -184.267
+
+Type  : Slow Model Setup 'clock_gen:cge|clk_out'
+Slack : -5.056
+TNS   : -138.226
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : 0.514
+TNS   : 0.000
+
+Type  : Slow Model Hold 'clock_gen:cge|clk_out'
+Slack : 0.514
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -34.380
+
+Type  : Slow Model Minimum Pulse Width 'clock_gen:cge|clk_out'
+Slack : -0.500
+TNS   : -33.000
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -2.191
+TNS   : -64.914
+
+Type  : Fast Model Setup 'clock_gen:cge|clk_out'
+Slack : -1.796
+TNS   : -48.295
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : 0.236
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clock_gen:cge|clk_out'
+Slack : 0.236
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -34.380
+>>>>>>> Stashed changes
+
+Type  : Fast Model Minimum Pulse Width 'clock_gen:cge|clk_out'
+Slack : -0.500
+TNS   : -33.000
 
 ------------------------------------------------------------

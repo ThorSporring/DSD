@@ -11,20 +11,20 @@ entity One_digit_clock_tester is
     SW: in std_logic_vector(17 downto 16);
     --output
     LEDR: out std_logic_vector(1 downto 0);
-    HEX0: out std_logic_vector(6 downto 0)
+    HEX0: out std_logic_vector(6 downot 0);
   ) ;
-end One_digit_clock_tester;
+end clock_gen_tester;
 
 architecture One_digit_clock_tester_impl of One_digit_clock_tester is
 
   signal countOut : std_logic_vector (3 downto 0);
-  signal clockOut : std_logic; 
+  signal clockOut : std_logic := 0; 
 
   begin
     --Clock genereator entity
       cge: entity work.clock_gen(clock_gen_impl) port map(
 
-      clk =>  CLOCK_50,
+      clk => CLOCK_50,
       speed => KEY(0),
       reset => KEY(3),
       clk_out => clockOut
@@ -33,7 +33,7 @@ architecture One_digit_clock_tester_impl of One_digit_clock_tester is
      --Multi Counter entity
       mct: entity work.multi_counter(multi_counter_impl) port map(
         
-          clk => clockOut,
+        clk => clockOut,
           mode => SW(17 downto 16),
           reset => KEY(3),
           

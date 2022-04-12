@@ -32,10 +32,16 @@ begin
 		begin
 			if mode = "00" then
 				max_count := 10;
+				min_count := 0;
 			elsif mode = "01" then
 				max_count := 6;
+				min_count := 0;
 			elsif mode = "10" or mode = "11" then
 				max_count := 3;
+				min_count := 0;
+			else
+				max_count := 2;
+				min_count := 0;
 			end if;
 		end process;
 
