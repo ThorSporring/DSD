@@ -2,12 +2,60 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Minimum Pulse Width 'KEY[0]'
+Type  : Slow Model Setup 'Two_player_guess_game:ggt|mux_first:mux1|set1'
+Slack : -0.682
+TNS   : -4.636
+
+Type  : Slow Model Setup 'Two_player_guess_game:ggt|mux_first:mux1|set2'
+Slack : -0.369
+TNS   : -1.943
+
+Type  : Slow Model Hold 'Two_player_guess_game:ggt|mux_first:mux1|set2'
+Slack : 0.005
+TNS   : 0.000
+
+Type  : Slow Model Hold 'Two_player_guess_game:ggt|mux_first:mux1|set1'
+Slack : 0.485
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'SW[17]'
 Slack : -1.222
 TNS   : -1.222
 
-Type  : Fast Model Minimum Pulse Width 'KEY[0]'
+Type  : Slow Model Minimum Pulse Width 'Two_player_guess_game:ggt|mux_first:mux1|set1'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'Two_player_guess_game:ggt|mux_first:mux1|set2'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'Two_player_guess_game:ggt|mux_first:mux1|set1'
+Slack : 0.154
+TNS   : 0.000
+
+Type  : Fast Model Setup 'Two_player_guess_game:ggt|mux_first:mux1|set2'
+Slack : 0.569
+TNS   : 0.000
+
+Type  : Fast Model Hold 'Two_player_guess_game:ggt|mux_first:mux1|set2'
+Slack : -0.133
+TNS   : -0.200
+
+Type  : Fast Model Hold 'Two_player_guess_game:ggt|mux_first:mux1|set1'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'SW[17]'
 Slack : -1.222
 TNS   : -1.222
+
+Type  : Fast Model Minimum Pulse Width 'Two_player_guess_game:ggt|mux_first:mux1|set1'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'Two_player_guess_game:ggt|mux_first:mux1|set2'
+Slack : 0.500
+TNS   : 0.000
 
 ------------------------------------------------------------

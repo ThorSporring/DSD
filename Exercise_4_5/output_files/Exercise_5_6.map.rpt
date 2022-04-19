@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Exercise_5_6
-Tue Mar 29 12:18:42 2022
+Tue Apr 19 08:45:22 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -43,16 +43,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 29 12:18:42 2022           ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 19 08:45:21 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Exercise_5_6                                    ;
-; Top-level Entity Name              ; guess_game_tester                               ;
+; Top-level Entity Name              ; Two_player_tester                               ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 71                                              ;
-;     Total combinational functions  ; 71                                              ;
+; Total logic elements               ; 168                                             ;
+;     Total combinational functions  ; 168                                             ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 25                                              ;
+; Total pins                         ; 42                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -66,7 +66,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; guess_game_tester  ; Exercise_5_6       ;
+; Top-level entity name                                                      ; Two_player_tester  ; Exercise_5_6       ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -156,85 +156,129 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                            ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                     ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
-; guess_game_tester.vhd            ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/guess_game_tester.vhd ;         ;
-; mylatch.vhd                      ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/mylatch.vhd           ;         ;
-; mux2.vhd                         ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/mux2.vhd              ;         ;
-; mux1.vhd                         ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/mux1.vhd              ;         ;
-; compare_logic.vhd                ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/compare_logic.vhd     ;         ;
-; bin2hex.vhd                      ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/bin2hex.vhd           ;         ;
-; guess_game.vhd                   ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/guess_game.vhd        ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
+; guess_game_tester.vhd            ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/guess_game_tester.vhd     ;         ;
+; mylatch.vhd                      ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/mylatch.vhd               ;         ;
+; mux2.vhd                         ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/mux2.vhd                  ;         ;
+; mux1.vhd                         ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/mux1.vhd                  ;         ;
+; compare_logic.vhd                ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/compare_logic.vhd         ;         ;
+; bin2hex.vhd                      ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/bin2hex.vhd               ;         ;
+; guess_game.vhd                   ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/guess_game.vhd            ;         ;
+; Two_player_guess_game.vhd        ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/Two_player_guess_game.vhd ;         ;
+; mux_last.vhd                     ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/mux_last.vhd              ;         ;
+; mux_first.vhd                    ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/mux_first.vhd             ;         ;
+; Two_player_tester.vhd            ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_4_5/Two_player_tester.vhd     ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                    ;
-+---------------------------------------------+--------------------------------------------------+
-; Resource                                    ; Usage                                            ;
-+---------------------------------------------+--------------------------------------------------+
-; Estimated Total logic elements              ; 71                                               ;
-;                                             ;                                                  ;
-; Total combinational functions               ; 71                                               ;
-; Logic element usage by number of LUT inputs ;                                                  ;
-;     -- 4 input functions                    ; 21                                               ;
-;     -- 3 input functions                    ; 47                                               ;
-;     -- <=2 input functions                  ; 3                                                ;
-;                                             ;                                                  ;
-; Logic elements by mode                      ;                                                  ;
-;     -- normal mode                          ; 57                                               ;
-;     -- arithmetic mode                      ; 14                                               ;
-;                                             ;                                                  ;
-; Total registers                             ; 0                                                ;
-;     -- Dedicated logic registers            ; 0                                                ;
-;     -- I/O registers                        ; 0                                                ;
-;                                             ;                                                  ;
-; I/O pins                                    ; 25                                               ;
-; Embedded Multiplier 9-bit elements          ; 0                                                ;
-; Maximum fan-out node                        ; guess_game:ggt|compare_logic:cl|compare_value[0] ;
-; Maximum fan-out                             ; 15                                               ;
-; Total fan-out                               ; 245                                              ;
-; Average fan-out                             ; 2.55                                             ;
-+---------------------------------------------+--------------------------------------------------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 168    ;
+;                                             ;        ;
+; Total combinational functions               ; 168    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 68     ;
+;     -- 3 input functions                    ; 92     ;
+;     -- <=2 input functions                  ; 8      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 140    ;
+;     -- arithmetic mode                      ; 28     ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+;     -- Dedicated logic registers            ; 0      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 42     ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; SW[17] ;
+; Maximum fan-out                             ; 51     ;
+; Total fan-out                               ; 582    ;
+; Average fan-out                             ; 2.77   ;
++---------------------------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
-; |guess_game_tester         ; 71 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 25   ; 0            ; |guess_game_tester                                 ; work         ;
-;    |guess_game:ggt|        ; 71 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |guess_game_tester|guess_game:ggt                  ; work         ;
-;       |bin2hex:b2h1|       ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |guess_game_tester|guess_game:ggt|bin2hex:b2h1     ; work         ;
-;       |bin2hex:b2h2|       ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |guess_game_tester|guess_game:ggt|bin2hex:b2h2     ; work         ;
-;       |compare_logic:cl|   ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |guess_game_tester|guess_game:ggt|compare_logic:cl ; work         ;
-;       |mux1:mx1|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |guess_game_tester|guess_game:ggt|mux1:mx1         ; work         ;
-;       |mux2:mx2|           ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |guess_game_tester|guess_game:ggt|mux2:mx2         ; work         ;
-;       |mylatch:ml|         ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |guess_game_tester|guess_game:ggt|mylatch:ml       ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                          ; Library Name ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------+--------------+
+; |Two_player_tester             ; 168 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 42   ; 0            ; |Two_player_tester                                                           ; work         ;
+;    |Two_player_guess_game:ggt| ; 168 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt                                 ; work         ;
+;       |guess_game:gg1|         ; 57 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg1                  ; work         ;
+;          |bin2hex:b2h1|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg1|bin2hex:b2h1     ; work         ;
+;          |bin2hex:b2h2|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg1|bin2hex:b2h2     ; work         ;
+;          |compare_logic:cl|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg1|compare_logic:cl ; work         ;
+;          |mux1:mx1|            ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg1|mux1:mx1         ; work         ;
+;          |mylatch:ml|          ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg1|mylatch:ml       ; work         ;
+;       |guess_game:gg2|         ; 57 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg2                  ; work         ;
+;          |bin2hex:b2h1|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg2|bin2hex:b2h1     ; work         ;
+;          |bin2hex:b2h2|        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg2|bin2hex:b2h2     ; work         ;
+;          |compare_logic:cl|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg2|compare_logic:cl ; work         ;
+;          |mux1:mx1|            ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg2|mux1:mx1         ; work         ;
+;          |mylatch:ml|          ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|guess_game:gg2|mylatch:ml       ; work         ;
+;       |mux_first:mux1|         ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|mux_first:mux1                  ; work         ;
+;       |mux_last:mux2|          ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Two_player_tester|Two_player_guess_game:ggt|mux_last:mux2                   ; work         ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; guess_game:ggt|compare_logic:cl|compare_value[0]    ; GND                 ; yes                    ;
-; guess_game:ggt|compare_logic:cl|compare_value[1]    ; GND                 ; yes                    ;
-; guess_game:ggt|mylatch:ml|secret_value[0]           ; KEY[0]              ; yes                    ;
-; guess_game:ggt|mylatch:ml|secret_value[1]           ; KEY[0]              ; yes                    ;
-; guess_game:ggt|mylatch:ml|secret_value[2]           ; KEY[0]              ; yes                    ;
-; guess_game:ggt|mylatch:ml|secret_value[3]           ; KEY[0]              ; yes                    ;
-; guess_game:ggt|mylatch:ml|secret_value[4]           ; KEY[0]              ; yes                    ;
-; guess_game:ggt|mylatch:ml|secret_value[5]           ; KEY[0]              ; yes                    ;
-; guess_game:ggt|mylatch:ml|secret_value[6]           ; KEY[0]              ; yes                    ;
-; guess_game:ggt|mylatch:ml|secret_value[7]           ; KEY[0]              ; yes                    ;
-; Number of user-specified and inferred latches = 10  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                 ;
++----------------------------------------------------------------------------+-----------------------------------------------+------------------------+
+; Latch Name                                                                 ; Latch Enable Signal                           ; Free of Timing Hazards ;
++----------------------------------------------------------------------------+-----------------------------------------------+------------------------+
+; Two_player_guess_game:ggt|guess_game:gg1|compare_logic:cl|compare_value[0] ; GND                                           ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg1|compare_logic:cl|compare_value[1] ; GND                                           ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg2|compare_logic:cl|compare_value[0] ; GND                                           ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg2|compare_logic:cl|compare_value[1] ; GND                                           ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg1|mylatch:ml|secret_value[0]        ; Two_player_guess_game:ggt|mux_first:mux1|set2 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out1[0]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|show2                             ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg1|mylatch:ml|secret_value[1]        ; Two_player_guess_game:ggt|mux_first:mux1|set2 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out1[1]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg1|mylatch:ml|secret_value[2]        ; Two_player_guess_game:ggt|mux_first:mux1|set2 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out1[2]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg1|mylatch:ml|secret_value[3]        ; Two_player_guess_game:ggt|mux_first:mux1|set2 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out1[3]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg2|mylatch:ml|secret_value[0]        ; Two_player_guess_game:ggt|mux_first:mux1|set1 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out2[0]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|show1                             ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg2|mylatch:ml|secret_value[1]        ; Two_player_guess_game:ggt|mux_first:mux1|set1 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out2[1]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg2|mylatch:ml|secret_value[2]        ; Two_player_guess_game:ggt|mux_first:mux1|set1 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out2[2]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg2|mylatch:ml|secret_value[3]        ; Two_player_guess_game:ggt|mux_first:mux1|set1 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out2[3]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg1|mylatch:ml|secret_value[4]        ; Two_player_guess_game:ggt|mux_first:mux1|set2 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out1[4]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg1|mylatch:ml|secret_value[5]        ; Two_player_guess_game:ggt|mux_first:mux1|set2 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out1[5]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg1|mylatch:ml|secret_value[6]        ; Two_player_guess_game:ggt|mux_first:mux1|set2 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out1[6]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg1|mylatch:ml|secret_value[7]        ; Two_player_guess_game:ggt|mux_first:mux1|set2 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out1[7]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg2|mylatch:ml|secret_value[4]        ; Two_player_guess_game:ggt|mux_first:mux1|set1 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out2[4]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg2|mylatch:ml|secret_value[5]        ; Two_player_guess_game:ggt|mux_first:mux1|set1 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out2[5]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg2|mylatch:ml|secret_value[6]        ; Two_player_guess_game:ggt|mux_first:mux1|set1 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out2[6]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|guess_game:gg2|mylatch:ml|secret_value[7]        ; Two_player_guess_game:ggt|mux_first:mux1|set1 ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|mux_out2[7]                       ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|try1                              ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|try2                              ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|set2                              ; SW[17]                                        ; yes                    ;
+; Two_player_guess_game:ggt|mux_first:mux1|set1                              ; SW[17]                                        ; yes                    ;
+; Number of user-specified and inferred latches = 42                         ;                                               ;                        ;
++----------------------------------------------------------------------------+-----------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -253,13 +297,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |guess_game_tester|guess_game:ggt|mux2:mx2|Mux11 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Two_player_tester|Two_player_guess_game:ggt|mux_last:mux2|hex_out[0] ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |Two_player_tester|Two_player_guess_game:ggt|mux_last:mux2|hex_out[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -277,7 +322,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Mar 29 12:18:40 2022
+    Info: Processing started: Tue Apr 19 08:45:19 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Exercise_5_6 -c Exercise_5_6
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file guess_game_tester.vhd
@@ -301,9 +346,54 @@ Info (12021): Found 2 design units, including 1 entities, in source file bin2hex
 Info (12021): Found 2 design units, including 1 entities, in source file guess_game.vhd
     Info (12022): Found design unit 1: guess_game-guess_game_impl
     Info (12023): Found entity 1: guess_game
-Info (12127): Elaborating entity "guess_game_tester" for the top level hierarchy
-Info (12129): Elaborating entity "guess_game" using architecture "A:guess_game_impl" for hierarchy "guess_game:ggt"
-Info (12129): Elaborating entity "mylatch" using architecture "A:mylatch_impl" for hierarchy "guess_game:ggt|mylatch:ml"
+Info (12021): Found 2 design units, including 1 entities, in source file two_player_guess_game.vhd
+    Info (12022): Found design unit 1: Two_player_guess_game-Two_player_guess_game_impl
+    Info (12023): Found entity 1: Two_player_guess_game
+Info (12021): Found 2 design units, including 1 entities, in source file mux_last.vhd
+    Info (12022): Found design unit 1: mux_last-mux_last_impl
+    Info (12023): Found entity 1: mux_last
+Info (12021): Found 2 design units, including 1 entities, in source file mux_first.vhd
+    Info (12022): Found design unit 1: mux_first-mux_first_impl
+    Info (12023): Found entity 1: mux_first
+Info (12021): Found 2 design units, including 1 entities, in source file two_player_tester.vhd
+    Info (12022): Found design unit 1: Two_player_tester-Two_player_tester_impl
+    Info (12023): Found entity 1: Two_player_tester
+Info (12127): Elaborating entity "Two_player_tester" for the top level hierarchy
+Info (12129): Elaborating entity "Two_player_guess_game" using architecture "A:two_player_guess_game_impl" for hierarchy "Two_player_guess_game:ggt"
+Warning (10541): VHDL Signal Declaration warning at Two_player_guess_game.vhd(30): used implicit default value for signal "temp_1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12129): Elaborating entity "mux_first" using architecture "A:mux_first_impl" for hierarchy "Two_player_guess_game:ggt|mux_first:mux1"
+Warning (10631): VHDL Process Statement warning at mux_first.vhd(24): inferring latch(es) for signal or variable "show1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at mux_first.vhd(24): inferring latch(es) for signal or variable "set1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at mux_first.vhd(24): inferring latch(es) for signal or variable "mux_out2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at mux_first.vhd(24): inferring latch(es) for signal or variable "try2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at mux_first.vhd(24): inferring latch(es) for signal or variable "show2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at mux_first.vhd(24): inferring latch(es) for signal or variable "set2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at mux_first.vhd(24): inferring latch(es) for signal or variable "mux_out1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at mux_first.vhd(24): inferring latch(es) for signal or variable "try1", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "try1" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out1[0]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out1[1]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out1[2]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out1[3]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out1[4]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out1[5]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out1[6]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out1[7]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "set2" at mux_first.vhd(24)
+Info (10041): Inferred latch for "show2" at mux_first.vhd(24)
+Info (10041): Inferred latch for "try2" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out2[0]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out2[1]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out2[2]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out2[3]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out2[4]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out2[5]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out2[6]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "mux_out2[7]" at mux_first.vhd(24)
+Info (10041): Inferred latch for "set1" at mux_first.vhd(24)
+Info (10041): Inferred latch for "show1" at mux_first.vhd(24)
+Info (12129): Elaborating entity "guess_game" using architecture "A:guess_game_impl" for hierarchy "Two_player_guess_game:ggt|guess_game:gg1"
+Info (12129): Elaborating entity "mylatch" using architecture "A:mylatch_impl" for hierarchy "Two_player_guess_game:ggt|guess_game:gg1|mylatch:ml"
 Warning (10631): VHDL Process Statement warning at mylatch.vhd(15): inferring latch(es) for signal or variable "secret_value", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "secret_value[0]" at mylatch.vhd(15)
 Info (10041): Inferred latch for "secret_value[1]" at mylatch.vhd(15)
@@ -313,23 +403,40 @@ Info (10041): Inferred latch for "secret_value[4]" at mylatch.vhd(15)
 Info (10041): Inferred latch for "secret_value[5]" at mylatch.vhd(15)
 Info (10041): Inferred latch for "secret_value[6]" at mylatch.vhd(15)
 Info (10041): Inferred latch for "secret_value[7]" at mylatch.vhd(15)
-Info (12129): Elaborating entity "compare_logic" using architecture "A:compare_logic_impl" for hierarchy "guess_game:ggt|compare_logic:cl"
+Info (12129): Elaborating entity "compare_logic" using architecture "A:compare_logic_impl" for hierarchy "Two_player_guess_game:ggt|guess_game:gg1|compare_logic:cl"
 Warning (10631): VHDL Process Statement warning at compare_logic.vhd(15): inferring latch(es) for signal or variable "compare_value", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "compare_value[0]" at compare_logic.vhd(15)
 Info (10041): Inferred latch for "compare_value[1]" at compare_logic.vhd(15)
-Info (12129): Elaborating entity "mux1" using architecture "A:mux1_impl" for hierarchy "guess_game:ggt|mux1:mx1"
-Info (12129): Elaborating entity "bin2hex" using architecture "A:bin2hex_impl" for hierarchy "guess_game:ggt|bin2hex:b2h1"
-Info (12129): Elaborating entity "mux2" using architecture "A:mux2_impl" for hierarchy "guess_game:ggt|mux2:mx2"
+Info (12129): Elaborating entity "mux1" using architecture "A:mux1_impl" for hierarchy "Two_player_guess_game:ggt|guess_game:gg1|mux1:mx1"
+Info (12129): Elaborating entity "bin2hex" using architecture "A:bin2hex_impl" for hierarchy "Two_player_guess_game:ggt|guess_game:gg1|bin2hex:b2h1"
+Info (12129): Elaborating entity "mux2" using architecture "A:mux2_impl" for hierarchy "Two_player_guess_game:ggt|guess_game:gg1|mux2:mx2"
+Info (12129): Elaborating entity "mux_last" using architecture "A:mux_last_impl" for hierarchy "Two_player_guess_game:ggt|mux_last:mux2"
+Warning (10492): VHDL Process Statement warning at mux_last.vhd(18): signal "player2_hex" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux_last.vhd(20): signal "player1_hex" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX7[1]" is stuck at GND
+    Warning (13410): Pin "HEX7[2]" is stuck at GND
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 71 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4656 megabytes
-    Info: Processing ended: Tue Mar 29 12:18:42 2022
-    Info: Elapsed time: 00:00:02
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+    Warning (15610): No output dependent on input pin "SW[16]"
+Info (21057): Implemented 210 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 21 output pins
+    Info (21061): Implemented 168 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4640 megabytes
+    Info: Processing ended: Tue Apr 19 08:45:22 2022
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 
