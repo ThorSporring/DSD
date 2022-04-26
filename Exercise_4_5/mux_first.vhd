@@ -30,7 +30,7 @@ architecture mux_first_impl of mux_first is
 		set1 <= set;
 		mux_out2 <= input;
 		try2 <= try;
-	else						-- else if player is 0 set all inputs to 2nd set of outputs
+	else		-- else if player is 0 set all inputs to 2nd set of outputs
 		show2 <= show;
 		set2 <= set;
 		mux_out1 <= input;

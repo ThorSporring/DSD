@@ -15,10 +15,10 @@ architecture mux1_impl of mux1 is
 	begin
 	mux1_if: process(show,bin_input,secret_value)
     begin
-        if show = '1' then				-- if show is 1 bin_input goes to mux1
-            mux1 <= bin_input;
+        if show = '1' then				
+            mux1 <= bin_input;	-- if show is 1 bin_input goes to mux1
         else
-            mux1 <= secret_value; 	-- if show is 0 secret_value goes to mux1
+            mux1 <= secret_value;	-- if show is 0 secret_value goes to mux1
         end if;
 	end process mux1_if;
 end mux1_impl;
