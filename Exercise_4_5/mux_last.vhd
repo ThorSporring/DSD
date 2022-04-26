@@ -14,11 +14,11 @@ architecture mux_last_impl of mux_last is
 	-- Used to determine which input is going to the output.
 	begin
 	mux_if2: process(player,player1_hex,player2_hex)
-		begin
-			if player = '1' then				
-				hex_out <= player2_hex;	-- if player is 1 player2_hex goes to the output.
-			else				
-				hex_out <= player1_hex;	-- if player is 0	player1_hex goes to the output.
-			end if;
-		end process mux_if2;
+	begin
+		if player = '1' then				
+			hex_out <= player2_hex;	-- if player is 1 player2_hex goes to the output.
+		else				
+			hex_out <= player1_hex;	-- if player is 0	player1_hex goes to the output.
+		end if;
+	end process mux_if2;
 end mux_last_impl;
