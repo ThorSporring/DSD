@@ -3,10 +3,10 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.all;
 entity bin2hex is
---Denne entity modtager et input i BCD kode
+-- This entity receives an input in BCD code
     port(
-    bin  : in std_logic_vector(3 downto 0);
-    seg	: out std_logic_vector(6 downto 0)
+		bin:	in std_logic_vector(3 downto 0);
+		seg:	out std_logic_vector(6 downto 0)
     );
 end bin2hex;
 
