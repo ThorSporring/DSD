@@ -14,8 +14,8 @@ architecture mylatch_impl of mylatch is
     begin
     p1:process(set,bin_input)
     begin
-       if set = '0' then				-- if set is 0 bin_input goes to secret_value
-		 secret_value <= bin_input;
-		 end if;
+		if set = '0' then				-- if set is 0 bin_input goes to secret_value
+			secret_value <= bin_input;
+		end if;
     end process p1;
 end mylatch_impl;

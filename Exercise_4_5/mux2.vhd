@@ -10,17 +10,17 @@ entity mux2 is -- Implementation of in and outputs
 end mux2;
 
 architecture mux2_impl of mux2 is
-	-- Sender to binære tal ud på outputtet, som bruges til at udskrive
-	-- tal eller bogstaver ud på 7-segment i forhold til hvilken værdi
-	-- compare_logic har.
+	-- Sends two binary numbers out on the output, which is used to
+	-- print numbers and letters on the 7-segment
+	-- in comparison with whichever value compare_logic has.
     begin
 	 mux2_if: process(compare_logic,seg_1)
     begin
 	 case(compare_logic) is
-	 when "10" => hex <= "0001001" & "1101111"; -- "H i"
-	 when "01" => hex <= "1000111" & "0100011"; -- "L o"
-	 when "00" => hex <= "0111111" & "0111111"; -- "- -"
-    when "11" => hex <= seg_1;    
+		when "10" => hex <= "0001001" & "1101111"; -- "H i"
+		when "01" => hex <= "1000111" & "0100011"; -- "L o"
+		when "00" => hex <= "0111111" & "0111111"; -- "- -"
+		when "11" => hex <= seg_1;    
    end case;
 	end process mux2_if;
 end mux2_impl;
