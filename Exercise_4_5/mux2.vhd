@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity mux2 is 
+entity mux2 is -- Implementation of in and outputs
     port(
         seg_1: in std_logic_vector(13 downto 0);
         compare_logic: in std_logic_vector(1 downto 0);
@@ -10,6 +10,9 @@ entity mux2 is
 end mux2;
 
 architecture mux2_impl of mux2 is
+	-- Sender to binære tal ud på outputtet, som bruges til at udskrive
+	-- tal eller bogstaver ud på 7-segment i forhold til hvilken værdi
+	-- compare_logic har.
     begin
 	 mux2_if: process(compare_logic,seg_1)
     begin

@@ -13,13 +13,15 @@ entity guess_game is
 end guess_game;
 
 architecture guess_game_impl of guess_game is
+	-- Temporary signals used between input and outputs of different entities
    signal secret_value: std_logic_vector(7 downto 0);
-   signal compare_value: std_logic_vector(1 downto 0);
-    signal mux1: std_logic_vector(7 downto 0);
-    signal bin_to_mux2: std_logic_vector(13 downto 0);
+	signal compare_value: std_logic_vector(1 downto 0);
+   signal mux1: std_logic_vector(7 downto 0);
+	signal bin_to_mux2: std_logic_vector(13 downto 0);
     
 
-    begin
+	begin
+	-- Declares which local signals the modules inputs and outputs are connected to. (Port Mapping)
         ml:entity work.mylatch(mylatch_impl) port map(
             set => set,
             bin_input => inputs,

@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity Two_player_guess_game is
+entity Two_player_guess_game is	-- Implementation of in and outputs
 	port(
 		show: in std_logic;
 		set: in std_logic;
@@ -15,6 +15,7 @@ entity Two_player_guess_game is
 end Two_player_guess_game;
 
 architecture Two_player_guess_game_impl of Two_player_guess_game is
+	-- Temporary signals used between input and outputs of different entities
 	signal show_temp1: std_logic;
 	signal set_temp1: std_logic;
 	signal input_temp1: std_logic_vector(7 downto 0);
@@ -30,6 +31,7 @@ architecture Two_player_guess_game_impl of Two_player_guess_game is
 	signal temp_1: std_logic_vector(2 downto 0);
 	
 	begin
+	-- Declares which local signals the modules inputs and outputs are connected to. (Port Mapping)
 		mux1: entity work.mux_first(mux_first_impl) port map(
 			show => show,
 			input => input,

@@ -14,6 +14,7 @@ end Two_player_tester;
 architecture Two_player_tester_impl of Two_player_tester is
 	signal temp: std_logic_vector(8 downto 0);
     begin
+	 -- Declares which local signals the modules inputs and outputs are connected to. (Port Mapping)
         ggt: entity work.Two_player_guess_game(Two_player_guess_game_impl) port map(
             input => SW(7 downto 0),
             set => KEY(0),

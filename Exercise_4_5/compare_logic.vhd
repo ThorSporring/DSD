@@ -11,6 +11,7 @@ entity compare_logic is
 end compare_logic;
 
 architecture compare_logic_impl of compare_logic is
+	-- Sends a binary number out on the compare_value output, related to whichever statement is true
 	begin 
     p1:process(try,bin_input,secret_value)
     begin
