@@ -31,7 +31,8 @@ architecture Two_player_guess_game_impl of Two_player_guess_game is
 	signal temp_1: std_logic_vector(2 downto 0);
 	
 	begin
-	-- Declares which local signals the modules inputs and outputs are connected to. (Port Mapping)
+	-- Declares which local signals the modules inputs and outputs are connected to. 
+	--(Port Mapping)
 		mux1: entity work.mux_first(mux_first_impl) port map(
 			show => show,
 			input => input,
