@@ -32,7 +32,7 @@ architecture Two_player_guess_game_impl of Two_player_guess_game is
 	
 	begin
 	-- Declares which local signals the modules inputs and outputs are connected to. 
-	--(Port Mapping)
+		--(Port Mapping)
 		mux1: entity work.mux_first(mux_first_impl) port map(
 			show => show,
 			input => input,
