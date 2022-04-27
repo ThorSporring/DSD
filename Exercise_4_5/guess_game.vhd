@@ -21,7 +21,8 @@ architecture guess_game_impl of guess_game is
     
 
 	begin
-	-- Declares which local signals the modules inputs and outputs are connected to. (Port Mapping)
+	-- Declares which local signals the modules inputs and outputs are connected to. 
+	--(Port Mapping)
         ml:entity work.mylatch(mylatch_impl) port map(
             set => set,
             bin_input => inputs,
