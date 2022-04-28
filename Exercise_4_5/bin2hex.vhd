@@ -3,16 +3,15 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.all;
 entity bin2hex is
---Denne entity modtager et input i BCD kode
+-- This entity receives an input in BCD code
     port(
-    bin  : in std_logic_vector(3 downto 0);
-    seg		: out std_logic_vector(6 downto 0)
+		bin:	in std_logic_vector(3 downto 0);
+		seg:	out std_logic_vector(6 downto 0)
     );
 end bin2hex;
 
 architecture bin2hex_impl of bin2hex is
-    --Oversætter BCD kode til den korrekte kombination af 
-    --LED'er i forhold til sandhedstabellen
+	-- Translates BCD code to the correct combination of LED's related to the truthtable
     begin
 	process1:process(bin)
     begin 

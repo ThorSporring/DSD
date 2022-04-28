@@ -10,7 +10,10 @@ entity multi_tester is
 
         --input port
         SW : in std_logic_vector(15 downto 0);
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         --output port
         LEDR : out std_logic_vector(15 downto 0)
     );
@@ -25,8 +28,15 @@ begin
     mut: entity work.multi(multi_impl) port map(
     --input
         A => SW (7 downto 0),
+<<<<<<< Updated upstream
 		  B => SW (15 downto 8),
     --output 
 		  Prod => LEDR(15 downto 0)
 		  );
+=======
+        B => SW (15 downto 8),
+    --output 
+        prod => LEDR(15 downto 0)
+    );
+>>>>>>> Stashed changes
 end multi_tester_impl; 
