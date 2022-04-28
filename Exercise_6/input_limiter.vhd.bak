@@ -1,0 +1,55 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.all;
+
+entity input_limiter is
+  port (
+   --input
+    bin_min1: in std_logic_vector (3 downto 0);
+    bin_min10: in std_logic_vector (3 downto 0);
+    bin_hrs1: in std_logic_vector (3 downto 0);
+    bin_hrs10: in std_logic_vector (3 downto 0);
+   --Output
+    time_alarm: out std_logic_vector (3 downto 0)
+    ) ;
+end input_limiter;
+
+architecture input_limiter_impl of input_limiter is
+
+    begin
+        process(bin_min1,bin_min10,bin_hrs1,bin_hrs10)
+            begin
+            
+                if bin_min1 <= 9
+                    bin_min1 <= time_alarm;
+                else
+                    time_alarm = 0;
+                end if;
+
+
+                if bin_min10 <= 5
+                    bin_min1 <= time_alarm;
+                else
+                    time_alarm = 0;
+                end if;
+
+
+                if bin_hrs1 <= 9
+                    bin_hrs1 <= time_alarm;
+                elsif bin_hrs1 > 4 and bin_hrs1 > 2
+                    time_alarm = 0;
+                else
+                    time_alarm = 0;
+                end if;
+
+
+                if bin_hrs10 <= 2
+                    bin_hrs10 <= time_alarm;
+                else
+                    time_alarm = 0;
+                end if;
+                
+            end process;
+
+end input_limiter_impl ; -- input_limiter_impl

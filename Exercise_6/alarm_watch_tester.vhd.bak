@@ -1,0 +1,43 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.all;
+
+entity alarm_watch_tester is
+  port (
+    --inputs
+    KEY : in std_logic_vector(3 downto 0);
+    SW : in std_logic_vector(15 downto 0);
+    CLOCK_50 : in std_logic;
+
+    --outputs
+    HEX2: out std_logic_vector(6 downto 0);
+    HEX3: out std_logic_vector(6 downto 0);
+    HEX4: out std_logic_vector(6 downto 0);
+    HEX5: out std_logic_vector(6 downto 0);
+    HEX6: out std_logic_vector(6 downto 0);
+    HEX7: out std_logic_vector(6 downto 0);
+  ) ;
+end alarm_watch_tester;
+
+architecture alarm_watch_tester_imp of alarm_watch_tester is
+
+    signal 
+
+begin
+
+    aw1: entity work.alarm_watch(alarm_watch_impl) port map(
+       
+        KEY(2) => choice,
+
+        SW(3 downto 0) => in_min1,
+        SW(7 downto 4) => in_min10,
+        SW(11 downto 8) => in_hrs1,
+        SW(15 downto 12) => in_hrs10,
+
+        CLOCK_50 => clk,
+        KEY(0) => speed,
+        KEY(3) => reset
+    );
+
+end alarm_watch_tester_imp ; -- alarm_watch_tester_imp

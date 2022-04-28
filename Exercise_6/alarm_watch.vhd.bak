@@ -1,0 +1,33 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.all;
+
+entity alarm_watch_tester is
+  port (
+    
+  ) ;
+end alarm_watch_tester;
+
+architecture alarm_watch_tester_impl of alarm_watch_tester is
+
+    signal time_alarm_temp : out std_logic_vector (15 downto 0);
+    signal tm_temp : out std_logic_vector (15 downto 0);
+    
+    signal bin_min1 : out std_logic_vector (6 downto 0);
+    signal bin_min10 : out std_logic_vector (6 downto 0);
+    signal bin_hrs1 : out std_logic_vector (6 downto 0);
+    signal bin_hrs10 : out std_logic_vector (6 downto 0);
+
+    signal watch_sec1 : out std_logic_vector (6 downto 0);
+    signal watch_sec10 : out std_logic_vector (6 downto 0);
+    signal watch_min1 : out std_logic_vector (6 downto 0);
+    signal watch_min10 : out std_logic_vector (6 downto 0);
+    signal watch_hrs1 : out std_logic_vector (6 downto 0);
+    signal watch_hrs10 : out std_logic_vector (6 downto 0);
+
+begin
+    
+
+
+end alarm_watch_tester_impl ; -- alarm_watch_tester_impl

@@ -1,0 +1,400 @@
+Simulator report for Exercise_6
+Tue Apr 19 11:40:25 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 100.0 us     ;
+; Simulation Netlist Size     ; 119 nodes    ;
+; Simulation Coverage         ;      41.33 % ;
+; Total Number of Transitions ; 190973       ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                                      ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                                    ; Default Value ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Timing                                                                                     ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                                       ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                                        ;               ;
+; Vector input source                                                                        ; C:/Users/spott/OneDrive - Aarhus Universitet/Dokumenter/GitHub/DSD/Exercise_6/Waveform.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                                         ; On            ;
+; Check outputs                                                                              ; Off                                                                                        ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                                         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                                         ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                                         ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                                         ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                                        ; Off           ;
+; Detect glitches                                                                            ; Off                                                                                        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                                        ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                                        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                                        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                                        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                                         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                                                 ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                                        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                                        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                                       ; Auto          ;
++--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      41.33 % ;
+; Total nodes checked                                 ; 119          ;
+; Total output ports checked                          ; 150          ;
+; Total output ports with complete 1/0-value coverage ; 62           ;
+; Total output ports with no 1/0-value coverage       ; 87           ;
+; Total output ports with no 1-value coverage         ; 87           ;
+; Total output ports with no 0-value coverage         ; 88           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                ;
++--------------------------------------------+--------------------------------------------+------------------+
+; Node Name                                  ; Output Port Name                           ; Output Port Type ;
++--------------------------------------------+--------------------------------------------+------------------+
+; |clock_gen|Add0~0                          ; |clock_gen|Add0~0                          ; combout          ;
+; |clock_gen|Add0~0                          ; |clock_gen|Add0~1                          ; cout             ;
+; |clock_gen|Add0~2                          ; |clock_gen|Add0~2                          ; combout          ;
+; |clock_gen|Add0~2                          ; |clock_gen|Add0~3                          ; cout             ;
+; |clock_gen|Add0~4                          ; |clock_gen|Add0~4                          ; combout          ;
+; |clock_gen|Add0~4                          ; |clock_gen|Add0~5                          ; cout             ;
+; |clock_gen|Add0~6                          ; |clock_gen|Add0~6                          ; combout          ;
+; |clock_gen|Add0~6                          ; |clock_gen|Add0~7                          ; cout             ;
+; |clock_gen|Add0~8                          ; |clock_gen|Add0~8                          ; combout          ;
+; |clock_gen|Add0~8                          ; |clock_gen|Add0~9                          ; cout             ;
+; |clock_gen|Add0~10                         ; |clock_gen|Add0~10                         ; combout          ;
+; |clock_gen|Add0~10                         ; |clock_gen|Add0~11                         ; cout             ;
+; |clock_gen|Add0~12                         ; |clock_gen|Add0~12                         ; combout          ;
+; |clock_gen|Add0~12                         ; |clock_gen|Add0~13                         ; cout             ;
+; |clock_gen|Add0~14                         ; |clock_gen|Add0~14                         ; combout          ;
+; |clock_gen|Add0~14                         ; |clock_gen|Add0~15                         ; cout             ;
+; |clock_gen|Add0~16                         ; |clock_gen|Add0~16                         ; combout          ;
+; |clock_gen|Add0~16                         ; |clock_gen|Add0~17                         ; cout             ;
+; |clock_gen|Add0~18                         ; |clock_gen|Add0~18                         ; combout          ;
+; |clock_gen|Add0~18                         ; |clock_gen|Add0~19                         ; cout             ;
+; |clock_gen|Add0~20                         ; |clock_gen|Add0~20                         ; combout          ;
+; |clock_gen|Add0~20                         ; |clock_gen|Add0~21                         ; cout             ;
+; |clock_gen|Add0~22                         ; |clock_gen|Add0~22                         ; combout          ;
+; |clock_gen|Add0~22                         ; |clock_gen|Add0~23                         ; cout             ;
+; |clock_gen|Add0~24                         ; |clock_gen|Add0~24                         ; combout          ;
+; |clock_gen|Add0~24                         ; |clock_gen|Add0~25                         ; cout             ;
+; |clock_gen|Add0~26                         ; |clock_gen|Add0~26                         ; combout          ;
+; |clock_gen|Add0~26                         ; |clock_gen|Add0~27                         ; cout             ;
+; |clock_gen|Add0~28                         ; |clock_gen|Add0~28                         ; combout          ;
+; |clock_gen|\clock_process:clockCounter[12] ; |clock_gen|\clock_process:clockCounter[12] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[11] ; |clock_gen|\clock_process:clockCounter[11] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[10] ; |clock_gen|\clock_process:clockCounter[10] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[9]  ; |clock_gen|\clock_process:clockCounter[9]  ; regout           ;
+; |clock_gen|\clock_process:clockCounter[8]  ; |clock_gen|\clock_process:clockCounter[8]  ; regout           ;
+; |clock_gen|\clock_process:clockCounter[7]  ; |clock_gen|\clock_process:clockCounter[7]  ; regout           ;
+; |clock_gen|\clock_process:clockCounter[6]  ; |clock_gen|\clock_process:clockCounter[6]  ; regout           ;
+; |clock_gen|\clock_process:clockCounter[5]  ; |clock_gen|\clock_process:clockCounter[5]  ; regout           ;
+; |clock_gen|\clock_process:clockCounter[4]  ; |clock_gen|\clock_process:clockCounter[4]  ; regout           ;
+; |clock_gen|\clock_process:clockCounter[3]  ; |clock_gen|\clock_process:clockCounter[3]  ; regout           ;
+; |clock_gen|\clock_process:clockCounter[2]  ; |clock_gen|\clock_process:clockCounter[2]  ; regout           ;
+; |clock_gen|\clock_process:clockCounter[1]  ; |clock_gen|\clock_process:clockCounter[1]  ; regout           ;
+; |clock_gen|\clock_process:clockCounter[0]  ; |clock_gen|\clock_process:clockCounter[0]  ; regout           ;
+; |clock_gen|LessThan0~2                     ; |clock_gen|LessThan0~2                     ; combout          ;
+; |clock_gen|LessThan0~3                     ; |clock_gen|LessThan0~3                     ; combout          ;
+; |clock_gen|LessThan0~4                     ; |clock_gen|LessThan0~4                     ; combout          ;
+; |clock_gen|clockCounter~12                 ; |clock_gen|clockCounter~12                 ; combout          ;
+; |clock_gen|clockCounter~13                 ; |clock_gen|clockCounter~13                 ; combout          ;
+; |clock_gen|clockCounter~14                 ; |clock_gen|clockCounter~14                 ; combout          ;
+; |clock_gen|clockCounter~15                 ; |clock_gen|clockCounter~15                 ; combout          ;
+; |clock_gen|clockCounter~16                 ; |clock_gen|clockCounter~16                 ; combout          ;
+; |clock_gen|clockCounter~17                 ; |clock_gen|clockCounter~17                 ; combout          ;
+; |clock_gen|clockCounter~18                 ; |clock_gen|clockCounter~18                 ; combout          ;
+; |clock_gen|clockCounter~19                 ; |clock_gen|clockCounter~19                 ; combout          ;
+; |clock_gen|clockCounter~20                 ; |clock_gen|clockCounter~20                 ; combout          ;
+; |clock_gen|clockCounter~21                 ; |clock_gen|clockCounter~21                 ; combout          ;
+; |clock_gen|clockCounter~22                 ; |clock_gen|clockCounter~22                 ; combout          ;
+; |clock_gen|clockCounter~23                 ; |clock_gen|clockCounter~23                 ; combout          ;
+; |clock_gen|clockCounter~24                 ; |clock_gen|clockCounter~24                 ; combout          ;
+; |clock_gen|clockCounter~25                 ; |clock_gen|clockCounter~25                 ; combout          ;
+; |clock_gen|clockCounter~26                 ; |clock_gen|clockCounter~26                 ; combout          ;
+; |clock_gen|clk                             ; |clock_gen|clk~corein                      ; combout          ;
+; |clock_gen|clk~clkctrl                     ; |clock_gen|clk~clkctrl                     ; outclk           ;
++--------------------------------------------+--------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                   ;
++--------------------------------------------+--------------------------------------------+------------------+
+; Node Name                                  ; Output Port Name                           ; Output Port Type ;
++--------------------------------------------+--------------------------------------------+------------------+
+; |clock_gen|Add0~28                         ; |clock_gen|Add0~29                         ; cout             ;
+; |clock_gen|Add0~30                         ; |clock_gen|Add0~30                         ; combout          ;
+; |clock_gen|Add0~30                         ; |clock_gen|Add0~31                         ; cout             ;
+; |clock_gen|Add0~32                         ; |clock_gen|Add0~32                         ; combout          ;
+; |clock_gen|Add0~32                         ; |clock_gen|Add0~33                         ; cout             ;
+; |clock_gen|Add0~34                         ; |clock_gen|Add0~34                         ; combout          ;
+; |clock_gen|Add0~34                         ; |clock_gen|Add0~35                         ; cout             ;
+; |clock_gen|Add0~36                         ; |clock_gen|Add0~36                         ; combout          ;
+; |clock_gen|Add0~36                         ; |clock_gen|Add0~37                         ; cout             ;
+; |clock_gen|Add0~38                         ; |clock_gen|Add0~38                         ; combout          ;
+; |clock_gen|Add0~38                         ; |clock_gen|Add0~39                         ; cout             ;
+; |clock_gen|Add0~40                         ; |clock_gen|Add0~40                         ; combout          ;
+; |clock_gen|Add0~40                         ; |clock_gen|Add0~41                         ; cout             ;
+; |clock_gen|Add0~42                         ; |clock_gen|Add0~42                         ; combout          ;
+; |clock_gen|Add0~42                         ; |clock_gen|Add0~43                         ; cout             ;
+; |clock_gen|Add0~44                         ; |clock_gen|Add0~44                         ; combout          ;
+; |clock_gen|Add0~44                         ; |clock_gen|Add0~45                         ; cout             ;
+; |clock_gen|Add0~46                         ; |clock_gen|Add0~46                         ; combout          ;
+; |clock_gen|Add0~46                         ; |clock_gen|Add0~47                         ; cout             ;
+; |clock_gen|Add0~48                         ; |clock_gen|Add0~48                         ; combout          ;
+; |clock_gen|Add0~48                         ; |clock_gen|Add0~49                         ; cout             ;
+; |clock_gen|Add0~50                         ; |clock_gen|Add0~50                         ; combout          ;
+; |clock_gen|Add0~50                         ; |clock_gen|Add0~51                         ; cout             ;
+; |clock_gen|Add0~52                         ; |clock_gen|Add0~52                         ; combout          ;
+; |clock_gen|Add0~52                         ; |clock_gen|Add0~53                         ; cout             ;
+; |clock_gen|Add0~54                         ; |clock_gen|Add0~54                         ; combout          ;
+; |clock_gen|Add0~54                         ; |clock_gen|Add0~55                         ; cout             ;
+; |clock_gen|Add0~56                         ; |clock_gen|Add0~56                         ; combout          ;
+; |clock_gen|Add0~56                         ; |clock_gen|Add0~57                         ; cout             ;
+; |clock_gen|Add0~58                         ; |clock_gen|Add0~58                         ; combout          ;
+; |clock_gen|Add0~58                         ; |clock_gen|Add0~59                         ; cout             ;
+; |clock_gen|Add0~60                         ; |clock_gen|Add0~60                         ; combout          ;
+; |clock_gen|Add0~60                         ; |clock_gen|Add0~61                         ; cout             ;
+; |clock_gen|Add0~62                         ; |clock_gen|Add0~62                         ; combout          ;
+; |clock_gen|clk_out~reg0                    ; |clock_gen|clk_out~reg0                    ; regout           ;
+; |clock_gen|\clock_process:clockCounter[26] ; |clock_gen|\clock_process:clockCounter[26] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[25] ; |clock_gen|\clock_process:clockCounter[25] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[24] ; |clock_gen|\clock_process:clockCounter[24] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[23] ; |clock_gen|\clock_process:clockCounter[23] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[22] ; |clock_gen|\clock_process:clockCounter[22] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[21] ; |clock_gen|\clock_process:clockCounter[21] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[20] ; |clock_gen|\clock_process:clockCounter[20] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[19] ; |clock_gen|\clock_process:clockCounter[19] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[18] ; |clock_gen|\clock_process:clockCounter[18] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[17] ; |clock_gen|\clock_process:clockCounter[17] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[16] ; |clock_gen|\clock_process:clockCounter[16] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[15] ; |clock_gen|\clock_process:clockCounter[15] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[14] ; |clock_gen|\clock_process:clockCounter[14] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[27] ; |clock_gen|\clock_process:clockCounter[27] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[28] ; |clock_gen|\clock_process:clockCounter[28] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[29] ; |clock_gen|\clock_process:clockCounter[29] ; regout           ;
+; |clock_gen|LessThan0~0                     ; |clock_gen|LessThan0~0                     ; combout          ;
+; |clock_gen|LessThan0~1                     ; |clock_gen|LessThan0~1                     ; combout          ;
+; |clock_gen|\clock_process:clockCounter[30] ; |clock_gen|\clock_process:clockCounter[30] ; regout           ;
+; |clock_gen|LessThan0~5                     ; |clock_gen|LessThan0~5                     ; combout          ;
+; |clock_gen|LessThan0~6                     ; |clock_gen|LessThan0~6                     ; combout          ;
+; |clock_gen|LessThan0~7                     ; |clock_gen|LessThan0~7                     ; combout          ;
+; |clock_gen|LessThan0~8                     ; |clock_gen|LessThan0~8                     ; combout          ;
+; |clock_gen|LessThan0~9                     ; |clock_gen|LessThan0~9                     ; combout          ;
+; |clock_gen|LessThan0~10                    ; |clock_gen|LessThan0~10                    ; combout          ;
+; |clock_gen|LessThan0~11                    ; |clock_gen|LessThan0~11                    ; combout          ;
+; |clock_gen|LessThan0~12                    ; |clock_gen|LessThan0~12                    ; combout          ;
+; |clock_gen|LessThan0~13                    ; |clock_gen|LessThan0~13                    ; combout          ;
+; |clock_gen|LessThan0~14                    ; |clock_gen|LessThan0~14                    ; combout          ;
+; |clock_gen|\clock_process:clockCounter[31] ; |clock_gen|\clock_process:clockCounter[31] ; regout           ;
+; |clock_gen|LessThan0~15                    ; |clock_gen|LessThan0~15                    ; combout          ;
+; |clock_gen|LessThan0~16                    ; |clock_gen|LessThan0~16                    ; combout          ;
+; |clock_gen|clockCounter~0                  ; |clock_gen|clockCounter~0                  ; combout          ;
+; |clock_gen|clockCounter~1                  ; |clock_gen|clockCounter~1                  ; combout          ;
+; |clock_gen|clockCounter~2                  ; |clock_gen|clockCounter~2                  ; combout          ;
+; |clock_gen|clockCounter~3                  ; |clock_gen|clockCounter~3                  ; combout          ;
+; |clock_gen|clockCounter~4                  ; |clock_gen|clockCounter~4                  ; combout          ;
+; |clock_gen|clockCounter~5                  ; |clock_gen|clockCounter~5                  ; combout          ;
+; |clock_gen|clockCounter~6                  ; |clock_gen|clockCounter~6                  ; combout          ;
+; |clock_gen|clockCounter~7                  ; |clock_gen|clockCounter~7                  ; combout          ;
+; |clock_gen|clockCounter~8                  ; |clock_gen|clockCounter~8                  ; combout          ;
+; |clock_gen|clockCounter~9                  ; |clock_gen|clockCounter~9                  ; combout          ;
+; |clock_gen|clockCounter~10                 ; |clock_gen|clockCounter~10                 ; combout          ;
+; |clock_gen|clockCounter~11                 ; |clock_gen|clockCounter~11                 ; combout          ;
+; |clock_gen|clockCounter~27                 ; |clock_gen|clockCounter~27                 ; combout          ;
+; |clock_gen|clockCounter~28                 ; |clock_gen|clockCounter~28                 ; combout          ;
+; |clock_gen|clockCounter~29                 ; |clock_gen|clockCounter~29                 ; combout          ;
+; |clock_gen|clockCounter~30                 ; |clock_gen|clockCounter~30                 ; combout          ;
+; |clock_gen|clk_out                         ; |clock_gen|clk_out                         ; padio            ;
+; |clock_gen|speed                           ; |clock_gen|speed~corein                    ; combout          ;
+; |clock_gen|reset                           ; |clock_gen|reset~corein                    ; combout          ;
+; |clock_gen|reset~clkctrl                   ; |clock_gen|reset~clkctrl                   ; outclk           ;
++--------------------------------------------+--------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                   ;
++--------------------------------------------+--------------------------------------------+------------------+
+; Node Name                                  ; Output Port Name                           ; Output Port Type ;
++--------------------------------------------+--------------------------------------------+------------------+
+; |clock_gen|Add0~28                         ; |clock_gen|Add0~29                         ; cout             ;
+; |clock_gen|Add0~30                         ; |clock_gen|Add0~30                         ; combout          ;
+; |clock_gen|Add0~30                         ; |clock_gen|Add0~31                         ; cout             ;
+; |clock_gen|Add0~32                         ; |clock_gen|Add0~32                         ; combout          ;
+; |clock_gen|Add0~32                         ; |clock_gen|Add0~33                         ; cout             ;
+; |clock_gen|Add0~34                         ; |clock_gen|Add0~34                         ; combout          ;
+; |clock_gen|Add0~34                         ; |clock_gen|Add0~35                         ; cout             ;
+; |clock_gen|Add0~36                         ; |clock_gen|Add0~36                         ; combout          ;
+; |clock_gen|Add0~36                         ; |clock_gen|Add0~37                         ; cout             ;
+; |clock_gen|Add0~38                         ; |clock_gen|Add0~38                         ; combout          ;
+; |clock_gen|Add0~38                         ; |clock_gen|Add0~39                         ; cout             ;
+; |clock_gen|Add0~40                         ; |clock_gen|Add0~40                         ; combout          ;
+; |clock_gen|Add0~40                         ; |clock_gen|Add0~41                         ; cout             ;
+; |clock_gen|Add0~42                         ; |clock_gen|Add0~42                         ; combout          ;
+; |clock_gen|Add0~42                         ; |clock_gen|Add0~43                         ; cout             ;
+; |clock_gen|Add0~44                         ; |clock_gen|Add0~44                         ; combout          ;
+; |clock_gen|Add0~44                         ; |clock_gen|Add0~45                         ; cout             ;
+; |clock_gen|Add0~46                         ; |clock_gen|Add0~46                         ; combout          ;
+; |clock_gen|Add0~46                         ; |clock_gen|Add0~47                         ; cout             ;
+; |clock_gen|Add0~48                         ; |clock_gen|Add0~48                         ; combout          ;
+; |clock_gen|Add0~48                         ; |clock_gen|Add0~49                         ; cout             ;
+; |clock_gen|Add0~50                         ; |clock_gen|Add0~50                         ; combout          ;
+; |clock_gen|Add0~50                         ; |clock_gen|Add0~51                         ; cout             ;
+; |clock_gen|Add0~52                         ; |clock_gen|Add0~52                         ; combout          ;
+; |clock_gen|Add0~52                         ; |clock_gen|Add0~53                         ; cout             ;
+; |clock_gen|Add0~54                         ; |clock_gen|Add0~54                         ; combout          ;
+; |clock_gen|Add0~54                         ; |clock_gen|Add0~55                         ; cout             ;
+; |clock_gen|Add0~56                         ; |clock_gen|Add0~56                         ; combout          ;
+; |clock_gen|Add0~56                         ; |clock_gen|Add0~57                         ; cout             ;
+; |clock_gen|Add0~58                         ; |clock_gen|Add0~58                         ; combout          ;
+; |clock_gen|Add0~58                         ; |clock_gen|Add0~59                         ; cout             ;
+; |clock_gen|Add0~60                         ; |clock_gen|Add0~60                         ; combout          ;
+; |clock_gen|Add0~60                         ; |clock_gen|Add0~61                         ; cout             ;
+; |clock_gen|Add0~62                         ; |clock_gen|Add0~62                         ; combout          ;
+; |clock_gen|clk_out~reg0                    ; |clock_gen|clk_out~reg0                    ; regout           ;
+; |clock_gen|\clock_process:clockCounter[26] ; |clock_gen|\clock_process:clockCounter[26] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[25] ; |clock_gen|\clock_process:clockCounter[25] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[24] ; |clock_gen|\clock_process:clockCounter[24] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[23] ; |clock_gen|\clock_process:clockCounter[23] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[22] ; |clock_gen|\clock_process:clockCounter[22] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[21] ; |clock_gen|\clock_process:clockCounter[21] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[20] ; |clock_gen|\clock_process:clockCounter[20] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[19] ; |clock_gen|\clock_process:clockCounter[19] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[18] ; |clock_gen|\clock_process:clockCounter[18] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[17] ; |clock_gen|\clock_process:clockCounter[17] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[16] ; |clock_gen|\clock_process:clockCounter[16] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[15] ; |clock_gen|\clock_process:clockCounter[15] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[14] ; |clock_gen|\clock_process:clockCounter[14] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[13] ; |clock_gen|\clock_process:clockCounter[13] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[27] ; |clock_gen|\clock_process:clockCounter[27] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[28] ; |clock_gen|\clock_process:clockCounter[28] ; regout           ;
+; |clock_gen|\clock_process:clockCounter[29] ; |clock_gen|\clock_process:clockCounter[29] ; regout           ;
+; |clock_gen|LessThan0~0                     ; |clock_gen|LessThan0~0                     ; combout          ;
+; |clock_gen|LessThan0~1                     ; |clock_gen|LessThan0~1                     ; combout          ;
+; |clock_gen|\clock_process:clockCounter[30] ; |clock_gen|\clock_process:clockCounter[30] ; regout           ;
+; |clock_gen|LessThan0~5                     ; |clock_gen|LessThan0~5                     ; combout          ;
+; |clock_gen|LessThan0~6                     ; |clock_gen|LessThan0~6                     ; combout          ;
+; |clock_gen|LessThan0~7                     ; |clock_gen|LessThan0~7                     ; combout          ;
+; |clock_gen|LessThan0~8                     ; |clock_gen|LessThan0~8                     ; combout          ;
+; |clock_gen|LessThan0~9                     ; |clock_gen|LessThan0~9                     ; combout          ;
+; |clock_gen|LessThan0~10                    ; |clock_gen|LessThan0~10                    ; combout          ;
+; |clock_gen|LessThan0~11                    ; |clock_gen|LessThan0~11                    ; combout          ;
+; |clock_gen|LessThan0~12                    ; |clock_gen|LessThan0~12                    ; combout          ;
+; |clock_gen|LessThan0~13                    ; |clock_gen|LessThan0~13                    ; combout          ;
+; |clock_gen|LessThan0~14                    ; |clock_gen|LessThan0~14                    ; combout          ;
+; |clock_gen|\clock_process:clockCounter[31] ; |clock_gen|\clock_process:clockCounter[31] ; regout           ;
+; |clock_gen|LessThan0~15                    ; |clock_gen|LessThan0~15                    ; combout          ;
+; |clock_gen|LessThan0~16                    ; |clock_gen|LessThan0~16                    ; combout          ;
+; |clock_gen|clockCounter~0                  ; |clock_gen|clockCounter~0                  ; combout          ;
+; |clock_gen|clockCounter~1                  ; |clock_gen|clockCounter~1                  ; combout          ;
+; |clock_gen|clockCounter~2                  ; |clock_gen|clockCounter~2                  ; combout          ;
+; |clock_gen|clockCounter~3                  ; |clock_gen|clockCounter~3                  ; combout          ;
+; |clock_gen|clockCounter~4                  ; |clock_gen|clockCounter~4                  ; combout          ;
+; |clock_gen|clockCounter~5                  ; |clock_gen|clockCounter~5                  ; combout          ;
+; |clock_gen|clockCounter~6                  ; |clock_gen|clockCounter~6                  ; combout          ;
+; |clock_gen|clockCounter~7                  ; |clock_gen|clockCounter~7                  ; combout          ;
+; |clock_gen|clockCounter~8                  ; |clock_gen|clockCounter~8                  ; combout          ;
+; |clock_gen|clockCounter~9                  ; |clock_gen|clockCounter~9                  ; combout          ;
+; |clock_gen|clockCounter~10                 ; |clock_gen|clockCounter~10                 ; combout          ;
+; |clock_gen|clockCounter~11                 ; |clock_gen|clockCounter~11                 ; combout          ;
+; |clock_gen|clockCounter~27                 ; |clock_gen|clockCounter~27                 ; combout          ;
+; |clock_gen|clockCounter~28                 ; |clock_gen|clockCounter~28                 ; combout          ;
+; |clock_gen|clockCounter~29                 ; |clock_gen|clockCounter~29                 ; combout          ;
+; |clock_gen|clockCounter~30                 ; |clock_gen|clockCounter~30                 ; combout          ;
+; |clock_gen|clk_out                         ; |clock_gen|clk_out                         ; padio            ;
+; |clock_gen|speed                           ; |clock_gen|speed~corein                    ; combout          ;
+; |clock_gen|reset                           ; |clock_gen|reset~corein                    ; combout          ;
+; |clock_gen|reset~clkctrl                   ; |clock_gen|reset~clkctrl                   ; outclk           ;
++--------------------------------------------+--------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Apr 19 11:40:23 2022
+Info: Command: quartus_sim --simulation_results_format=VWF Exercise_6 -c Exercise_6
+Info (324025): Using vector source file "C:/Users/spott/OneDrive - Aarhus Universitet/Dokumenter/GitHub/DSD/Exercise_6/Waveform.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      41.33 %
+Info (328052): Number of transitions in simulation is 190973
+Info (324045): Vector file Exercise_6.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4473 megabytes
+    Info: Processing ended: Tue Apr 19 11:40:25 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
