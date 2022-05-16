@@ -35,6 +35,11 @@ end view_mux;
 architecture view_mux_impl of view_mux is
 
 begin
+  --Tager højde for de to tilstande
+  --som choice kan være i. hvis 
+  -- den er lav viser den den
+  -- satte alarm. Ellers viser den
+  -- tiden
     process(choice)
     begin
       if choice = '0' then

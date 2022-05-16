@@ -10,6 +10,7 @@ entity input_limiter is
     bin_min10: in std_logic_vector (3 downto 0);
     bin_hrs1: in std_logic_vector (3 downto 0);
     bin_hrs10: in std_logic_vector (3 downto 0);
+    clk: in std_logic;
    --Output
     time_alarm: out std_logic_vector (15 downto 0)
     ) ;
@@ -19,7 +20,7 @@ architecture input_limiter_impl of input_limiter is
 
     begin
         --
-        process(bin_min1,bin_min10,bin_hrs1,bin_hrs10)
+        process(clk,bin_min1,bin_min10,bin_hrs1,bin_hrs10)
             begin
             
                 if bin_min1 <= "1001" then

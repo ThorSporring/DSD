@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.all;
+
+entity my_gates is
+  port (
+    --Inputs
+    a : in std_logic;
+    b: in std_logic;
+
+    --Outputs
+    and_out: out std_logic;
+    or_out: out std_logic;
+    xor_out: out std_logic;
+  ) ;
+end my_gates;
+
+architecture behavioral of my_gates is
+    procedure and_or(signal a,b : in std_logic; signal or_out, and_out: out std_logic) is
+        begin
+            or_out <= a or b;
+            and_out <= a and b;
+        end and_or;
+
+    signal s1,s2,s3,s4: std_logic;
+begin
+
+    u1: and_or(s1,s2,s3,s4);
+
+    a <= s1;
+    b <= s2;
+    or_out <= s3;
+    and_out <= s4;
+
+ 
+
+end behavioral ; -- behavioral

@@ -42,7 +42,7 @@ architecture One_digit_clock_tester_impl of One_digit_clock_tester is
       );
   
       --7-Segment entity
-      ssd: entity work.bin_to_7_segment(bin_to_7_segment_impl) port map(
+      ssd: entity work.bin2sevenseg(bin2sevenseg_impl) port map(
   
           bcd_input => countOut,
           s_seg => HEX0

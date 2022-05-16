@@ -52,6 +52,7 @@ architecture alarm_watch_impl of alarm_watch is
 begin
     --input limiter
     ipl: entity work.input_limiter(input_limiter_impl) port map(
+        clk => clock,
         bin_min1 => in_min1,
         bin_min10 => in_min10,
         bin_hrs1 => in_hrs1,

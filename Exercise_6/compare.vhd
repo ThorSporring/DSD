@@ -16,6 +16,8 @@ end compare;
 
 architecture compare_logic of compare is
 begin
+    --Sammenligner de to værdier
+    -- og retunerer et boolean
 	process(tm_alarm,tm_watch) begin
     if tm_watch = tm_alarm then
         alarm <= '1';

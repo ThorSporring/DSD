@@ -18,7 +18,7 @@ entity alarm_watch_tester is
     HEX6: out std_logic_vector(6 downto 0);
     HEX7: out std_logic_vector(6 downto 0);
 	 
-	 LEDR: out std_logic_vector(1 downto 0)
+	  LEDR: out std_logic_vector(1 downto 0)
   ) ;
 end alarm_watch_tester;
 
@@ -26,6 +26,7 @@ architecture alarm_watch_tester_imp of alarm_watch_tester is
 
 begin
 
+  --Portmapper alle fysiske porte til Alarm watch
     aw1: entity work.alarm_watch(alarm_watch_impl) port map(
        
         choice => KEY(2),
