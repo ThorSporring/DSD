@@ -9,8 +9,8 @@ entity code_lock_simple is
 			reset : in std_logic;
 			code : in std_logic_vector(3 downto 0);
 			enter : in std_logic;
-			lock : out std_logic)
-			;
+			lock : out std_logic
+			);
 end;
 
 architecture code_lock_simple_impl of code_lock_simple is
@@ -21,15 +21,16 @@ architecture code_lock_simple_impl of code_lock_simple is
 	constant code2 : std_logic_vector := "1110";
 	
 	--------Interne signaler---------------------
-	signal Enter_rising :std_logic;
+	signal enter_sync :std_logic;
 	
 	begin
 
-		synchronizer: entity work.synch(synch_impl) port map ( 
+		synchronizer: entity work.synch(RTL) port map ( 
 			clk => clk, 
-			reset =>reset, 
-			async_sig =>  enter, 
-			Enter_rising => Enter_rising
+			async_sig => not enter,
+			rise => enter_sync,
+			fall => open,
+			synced => open
 			); --Brug enten rise eller fall output
 	
 		code_lock_fsm: entity work.code_lock_simple_fsm(code_lock_simple_fsm_impl) port map(
@@ -39,7 +40,7 @@ architecture code_lock_simple_impl of code_lock_simple is
 			reset => reset,
 			lock => lock,
 			clk => clk,
-			enter => Enter_rising
+			enter => enter_sync
 		);
 
 end code_lock_simple_impl;

@@ -1,24 +1,48 @@
-|meemoo_tester
-SW[0] => meemoo:tst.a
-SW[1] => meemoo:tst.b
-KEY[0] => meemoo:tst.clk
-KEY[1] => meemoo:tst.reset
-LEDR[0] <= meemoo:tst.moo_out
-LEDR[1] <= meemoo:tst.mee_out
+|Code_lock_simple
+clk => synch:synchronizer.clk
+clk => code_lock_simple_fsm:code_lock_fsm.clk
+reset => synch:synchronizer.reset
+reset => code_lock_simple_fsm:code_lock_fsm.reset
+code[0] => code_lock_simple_fsm:code_lock_fsm.code[0]
+code[1] => code_lock_simple_fsm:code_lock_fsm.code[1]
+code[2] => code_lock_simple_fsm:code_lock_fsm.code[2]
+code[3] => code_lock_simple_fsm:code_lock_fsm.code[3]
+enter => synch:synchronizer.enter
+lock <= code_lock_simple_fsm:code_lock_fsm.lock
 
 
-|meemoo_tester|meemoo:tst
-clk => present_state~7.DATAIN
-reset => present_state~0.OUTPUTSELECT
-reset => present_state~1.OUTPUTSELECT
-reset => present_state~2.OUTPUTSELECT
-a => nxt_state_moore~0.IN0
-a => outputs_mealy~0.IN0
-b => Selector1.IN2
-b => outputs_mealy~0.IN1
-b => Selector0.IN2
-b => nxt_state_moore~0.IN1
-moo_out <= moo_out~0.DB_MAX_OUTPUT_PORT_TYPE
-mee_out <= mee_out~0.DB_MAX_OUTPUT_PORT_TYPE
+|Code_lock_simple|synch:synchronizer
+enter => ~NO_FANOUT~
+clk => Enter_rising~reg0.CLK
+reset => Enter_rising~reg0.ENA
+Enter_rising <= Enter_rising~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Code_lock_simple|code_lock_simple_fsm:code_lock_fsm
+clk => present_state~5.DATAIN
+reset => present_state~9.DATAIN
+enter => Selector0.IN5
+enter => next_state.ev_code1.DATAB
+enter => next_state.ev_code2.DATAB
+enter => Selector0.IN2
+enter => Selector1.IN1
+enter => Selector2.IN1
+code[0] => Equal0.IN3
+code[0] => Equal1.IN3
+code[1] => Equal0.IN2
+code[1] => Equal1.IN2
+code[2] => Equal0.IN1
+code[2] => Equal1.IN1
+code[3] => Equal0.IN0
+code[3] => Equal1.IN0
+code1[0] => Equal0.IN7
+code1[1] => Equal0.IN6
+code1[2] => Equal0.IN5
+code1[3] => Equal0.IN4
+code2[0] => Equal1.IN7
+code2[1] => Equal1.IN6
+code2[2] => Equal1.IN5
+code2[3] => Equal1.IN4
+lock <= lock~0.DB_MAX_OUTPUT_PORT_TYPE
 
 

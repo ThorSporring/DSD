@@ -14,20 +14,24 @@ entity code_lock_simple_fsm is
 end code_lock_simple_fsm;
 
 architecture code_lock_simple_fsm_impl of code_lock_simple_fsm is
+	-- Build an enumerated type for the state machine
 	type state is (locked,idle,ev_code1,get_code2,ev_code2,unlocked);
+	
+	-- Register to hold the current state
 	signal present_state, next_state : state;
 begin
-
+	-- Logic to advance to next state
     state_reg: process (clk)
     begin
 	    if reset = '0' then
 		    present_state <= idle;
 	    elsif rising_edge(clk) then
-		    present_state <= next_state
+		    present_state <= next_state;
 	    end if;
     end process;
-
-    outputs: process (present_state, clk, reset, enter, code);
+	
+	-- Outputs when in different states
+    outputs: process (present_state, clk, reset, enter, code)
         begin
 	        case present_state is
 	        -- one case branch required for each state
@@ -35,12 +39,12 @@ begin
                 when locked => lock <= '1';
                 when ev_code1 => lock <= '1';
                 when get_code2 => lock <= '1';
-                when ev_code2 => lock <= '1'
+                when ev_code2 => lock <= '1';
                 when unlocked => lock <= '0';
 	        end case;
     end process;
-
-    nxt_state: process (present_state, clk, reset, enter, code);
+	-- Logic to advance to the next state
+    nxt_state: process (present_state, clk, reset, enter, code)
         begin
 	        case present_state is
 	    -- one case branch required for each state
@@ -61,19 +65,19 @@ begin
                         next_state <= ev_code2;
                     else
                         next_state <= get_code2;
-                    end if
+                    end if;
                 when ev_code2 =>
                         if code = code2 then
                             next_state <= unlocked;
                         else
                             next_state <= idle;
-                        end if
+                        end if;
                 when unlocked =>
                         if enter = '1' then
                             next_state <= idle;
                         else
                             next_state <= unlocked;
-                        end if
+                        end if;
 		        -- default branch
 		        when others =>
 		            next_state <= idle;

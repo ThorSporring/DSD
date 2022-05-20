@@ -8,26 +8,27 @@ use work.all;
 
 entity synch is
 	port (
-		enter : in std_logic;
+		async_sig : in std_logic;
 		clk : in std_logic;
-        reset: in std_logic;
-		Enter_rising : out std_logic
-        );
+		rise : out std_logic;
+		fall : out std_logic;
+		synced : out std_logic
+      );
 end;
 
-architecture synch_impl of synch is
+architecture RTL of synch is
 begin
-	sync1 : process (clk,reset)
+	sync1 : process (clk)
 		variable resync : std_logic_vector(1 to 3):="000";
 	begin
-		if reset='0' then
-			resync:="000";
-		elsif rising_edge(clk) then
+		if rising_edge(clk) then
 			-- detect rising and falling edges.
-			Enter_rising <= resync(2) and not resync(3); --rising edge output
+			fall <= resync(2) and not resync(3); --rising edge output
+			rise <= resync(3) and not resync(2); -- falling edge output
+			synced <= resync(2); -- synched output
 			-- update history shifter.
-			
+			resync := async_sig & resync(1 to 2);
 		end if;
 	end process;
 
-end synch_impl;
+end architecture;

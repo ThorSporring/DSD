@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Exercise7
-Tue May 10 11:16:43 2022
+Tue May 17 11:11:38 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,10 +13,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |meemoo_tester|meemoo:tst|present_state
-  9. General Register Statistics
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. State Machine - |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Port Connectivity Checks: "code_lock_simple_fsm:code_lock_fsm"
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -42,16 +45,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 10 11:16:43 2022           ;
+; Analysis & Synthesis Status        ; Successful - Tue May 17 11:11:38 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Exercise7                                       ;
-; Top-level Entity Name              ; meemoo_tester                                   ;
+; Top-level Entity Name              ; code_lock_simple                                ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 5                                               ;
-;     Total combinational functions  ; 5                                               ;
-;     Dedicated logic registers      ; 3                                               ;
-; Total registers                    ; 3                                               ;
-; Total pins                         ; 6                                               ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 8                                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -65,7 +68,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; meemoo_tester      ; Exercise7          ;
+; Top-level entity name                                                      ; Code_lock_simple   ; Exercise7          ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -155,67 +158,91 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
-; meemoo_tester.vhd                ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_7/meemoo_tester.vhd ;         ;
-; meemoo.vhd                       ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_7/meemoo.vhd        ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; synch.vhd                        ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_7/synch.vhd                ;         ;
+; code_lock_simple_fsm.vhd         ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_7/code_lock_simple_fsm.vhd ;         ;
+; Code_lock_simple.vhd             ; yes             ; User VHDL File  ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_7/Code_lock_simple.vhd     ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                 ;
-+---------------------------------------------+-------------------------------+
-; Resource                                    ; Usage                         ;
-+---------------------------------------------+-------------------------------+
-; Estimated Total logic elements              ; 5                             ;
-;                                             ;                               ;
-; Total combinational functions               ; 5                             ;
-; Logic element usage by number of LUT inputs ;                               ;
-;     -- 4 input functions                    ; 4                             ;
-;     -- 3 input functions                    ; 1                             ;
-;     -- <=2 input functions                  ; 0                             ;
-;                                             ;                               ;
-; Logic elements by mode                      ;                               ;
-;     -- normal mode                          ; 5                             ;
-;     -- arithmetic mode                      ; 0                             ;
-;                                             ;                               ;
-; Total registers                             ; 3                             ;
-;     -- Dedicated logic registers            ; 3                             ;
-;     -- I/O registers                        ; 0                             ;
-;                                             ;                               ;
-; I/O pins                                    ; 6                             ;
-; Embedded Multiplier 9-bit elements          ; 0                             ;
-; Maximum fan-out node                        ; meemoo:tst|present_state.init ;
-; Maximum fan-out                             ; 4                             ;
-; Total fan-out                               ; 27                            ;
-; Average fan-out                             ; 1.93                          ;
-+---------------------------------------------+-------------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 8     ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
++---------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                               ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
-; |meemoo_tester             ; 5 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |meemoo_tester            ; work         ;
-;    |meemoo:tst|            ; 5 (5)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |meemoo_tester|meemoo:tst ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |code_lock_simple          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |code_lock_simple   ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------+
-; State Machine - |meemoo_tester|meemoo:tst|present_state                               ;
-+----------------------+----------------------+--------------------+--------------------+
-; Name                 ; present_state.active ; present_state.init ; present_state.idle ;
-+----------------------+----------------------+--------------------+--------------------+
-; present_state.idle   ; 0                    ; 0                  ; 0                  ;
-; present_state.init   ; 0                    ; 1                  ; 1                  ;
-; present_state.active ; 1                    ; 0                  ; 1                  ;
-+----------------------+----------------------+--------------------+--------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state                                                                                       ;
++-------------------------+------------------------+------------------------+-------------------------+------------------------+----------------------+--------------------+
+; Name                    ; present_state.unlocked ; present_state.ev_code2 ; present_state.get_code2 ; present_state.ev_code1 ; present_state.locked ; present_state.idle ;
++-------------------------+------------------------+------------------------+-------------------------+------------------------+----------------------+--------------------+
+; present_state.idle      ; 0                      ; 0                      ; 0                       ; 0                      ; 0                    ; 0                  ;
+; present_state.locked    ; 0                      ; 0                      ; 0                       ; 0                      ; 1                    ; 1                  ;
+; present_state.ev_code1  ; 0                      ; 0                      ; 0                       ; 1                      ; 0                    ; 1                  ;
+; present_state.get_code2 ; 0                      ; 0                      ; 1                       ; 0                      ; 0                    ; 1                  ;
+; present_state.ev_code2  ; 0                      ; 1                      ; 0                       ; 0                      ; 0                    ; 1                  ;
+; present_state.unlocked  ; 1                      ; 0                      ; 0                       ; 0                      ; 0                    ; 1                  ;
++-------------------------+------------------------+------------------------+-------------------------+------------------------+----------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                  ;
++------------------------------------------------------------+----------------------------------------+
+; Register name                                              ; Reason for Removal                     ;
++------------------------------------------------------------+----------------------------------------+
+; synch:synchronizer|Enter_rising                            ; Stuck at GND due to stuck port data_in ;
+; code_lock_simple_fsm:code_lock_fsm|present_state.locked    ; Stuck at GND due to stuck port data_in ;
+; code_lock_simple_fsm:code_lock_fsm|present_state.ev_code1  ; Stuck at GND due to stuck port data_in ;
+; code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2  ; Stuck at GND due to stuck port data_in ;
+; code_lock_simple_fsm:code_lock_fsm|present_state.idle      ; Lost fanout                            ;
+; code_lock_simple_fsm:code_lock_fsm|present_state.get_code2 ; Lost fanout                            ;
+; code_lock_simple_fsm:code_lock_fsm|present_state.unlocked  ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 7                      ;                                        ;
++------------------------------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                       ;
++-----------------------------------------------------------+---------------------------+-----------------------------------------------------------+
+; Register name                                             ; Reason for Removal        ; Registers Removed due to This Register                    ;
++-----------------------------------------------------------+---------------------------+-----------------------------------------------------------+
+; code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2 ; Stuck at GND              ; code_lock_simple_fsm:code_lock_fsm|present_state.unlocked ;
+;                                                           ; due to stuck port data_in ;                                                           ;
++-----------------------------------------------------------+---------------------------+-----------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -223,7 +250,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 3     ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -231,6 +258,18 @@ Encoding Type:  One-Hot
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "code_lock_simple_fsm:code_lock_fsm" ;
++-------------+-------+----------+-------------------------------+
+; Port        ; Type  ; Severity ; Details                       ;
++-------------+-------+----------+-------------------------------+
+; code1[3..2] ; Input ; Info     ; Stuck at VCC                  ;
+; code1[1..0] ; Input ; Info     ; Stuck at GND                  ;
+; code2[3..1] ; Input ; Info     ; Stuck at VCC                  ;
+; code2[0]    ; Input ; Info     ; Stuck at GND                  ;
++-------------+-------+----------+-------------------------------+
 
 
 +-------------------------------+
@@ -248,33 +287,139 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue May 10 11:16:42 2022
+    Info: Processing started: Tue May 17 11:11:37 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Exercise7 -c Exercise7
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
+Warning (136002): Ignored duplicate of assignment PARTITION_PRESERVE_HIGH_SPEED_TILES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IGNORE_SOURCE_FILE_CHANGES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ALWAYS_USE_QXP_NETLIST for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_NEW_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PIN_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_IMPORT_PROMOTE_ASSIGNMENTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_TYPE for node ""
+Warning (136002): Ignored duplicate of assignment ALLOW_MULTIPLE_PERSONAS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_ASD_REGION_ID for node ""
+Warning (136002): Ignored duplicate of assignment CROSS_BOUNDARY_OPTIMIZATIONS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_CONSTANTS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PROPAGATE_INVERSIONS_ON_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment MERGE_EQUIVALENT_BIDIRS for node ""
+Warning (136002): Ignored duplicate of assignment ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_EXTRACT_HARD_BLOCK_NODES for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_SOURCE for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_BACK_ANNOTATION for node ""
+Warning (136002): Ignored duplicate of assignment PARTITION_COLOR for node ""
+Warning (136002): Ignored duplicate of assignment HIERARCHY_BLACKBOX_FILE for node "|"
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file meemoo_tester.vhd
-    Info (12022): Found design unit 1: meemoo_tester-meemoo_tester_impl
-    Info (12023): Found entity 1: meemoo_tester
-Info (12021): Found 2 design units, including 1 entities, in source file meemoo.vhd
-    Info (12022): Found design unit 1: meemoo-meemoo_impl
-    Info (12023): Found entity 1: meemoo
-Info (12127): Elaborating entity "meemoo_tester" for the top level hierarchy
-Info (12129): Elaborating entity "meemoo" using architecture "A:meemoo_impl" for hierarchy "meemoo:tst"
-Warning (10492): VHDL Process Statement warning at meemoo.vhd(46): signal "b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at meemoo.vhd(52): signal "b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at meemoo.vhd(52): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at meemoo.vhd(54): signal "b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at meemoo.vhd(54): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at meemoo.vhd(60): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12021): Found 2 design units, including 1 entities, in source file synch.vhd
+    Info (12022): Found design unit 1: synch-synch_impl
+    Info (12023): Found entity 1: synch
+Info (12021): Found 2 design units, including 1 entities, in source file code_lock_simple_fsm.vhd
+    Info (12022): Found design unit 1: code_lock_simple_fsm-code_lock_simple_fsm_impl
+    Info (12023): Found entity 1: code_lock_simple_fsm
+Info (12021): Found 2 design units, including 1 entities, in source file code_lock_simple.vhd
+    Info (12022): Found design unit 1: code_lock_simple-code_lock_simple_impl
+    Info (12023): Found entity 1: code_lock_simple
+Info (12127): Elaborating entity "Code_lock_simple" for the top level hierarchy
+Info (12129): Elaborating entity "synch" using architecture "A:synch_impl" for hierarchy "synch:synchronizer"
+Warning (10631): VHDL Process Statement warning at synch.vhd(20): inferring latch(es) for signal or variable "resync", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "sync1:resync[3]" at synch.vhd(23)
+Info (10041): Inferred latch for "sync1:resync[2]" at synch.vhd(23)
+Info (12129): Elaborating entity "code_lock_simple_fsm" using architecture "A:code_lock_simple_fsm_impl" for hierarchy "code_lock_simple_fsm:code_lock_fsm"
+Warning (10492): VHDL Process Statement warning at code_lock_simple_fsm.vhd(23): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at code_lock_simple_fsm.vhd(54): signal "code1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at code_lock_simple_fsm.vhd(66): signal "code2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lock" is stuck at VCC
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 11 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 5 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4637 megabytes
-    Info: Processing ended: Tue May 10 11:16:43 2022
+Warning (21074): Design contains 7 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "enter"
+    Warning (15610): No output dependent on input pin "code[0]"
+    Warning (15610): No output dependent on input pin "code[1]"
+    Warning (15610): No output dependent on input pin "code[2]"
+    Warning (15610): No output dependent on input pin "code[3]"
+    Warning (15610): No output dependent on input pin "clk"
+    Warning (15610): No output dependent on input pin "reset"
+Info (21057): Implemented 8 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 1 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 107 warnings
+    Info: Peak virtual memory: 4645 megabytes
+    Info: Processing ended: Tue May 17 11:11:38 2022
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 
