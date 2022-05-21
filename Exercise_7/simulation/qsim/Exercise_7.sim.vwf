@@ -34,7 +34,7 @@ HEADER
 
 USER_TYPE("|code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state")
 {
-	VALUES = "present_state.idle", "present_state.locked", "present_state.ev_code1", "present_state.get_code2", "present_state.ev_code2", "present_state.unlocked";
+	VALUES = "present_state.idle", "present_state.ev_code1", "present_state.get_code2", "present_state.ev_code2", "present_state.unlocked", "present_state.wrong_code", "present_state.permanently_locked";
 }
 
 SIGNAL("clk")
@@ -145,9 +145,9 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 100;
-			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 5.0;
+			REPEAT = 50;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 		}
 	}
 }
@@ -157,17 +157,9 @@ TRANSITION_LIST("code[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 130.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 70.0;
-		LEVEL 0 FOR 120.0;
+		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 330.0;
+		LEVEL 0 FOR 930.0;
 	}
 }
 
@@ -176,17 +168,9 @@ TRANSITION_LIST("code[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 30.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 130.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 70.0;
-		LEVEL 0 FOR 120.0;
+		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 330.0;
+		LEVEL 0 FOR 930.0;
 	}
 }
 
@@ -195,11 +179,9 @@ TRANSITION_LIST("code[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 130.0;
-		LEVEL 1 FOR 100.0;
-		LEVEL 0 FOR 630.0;
+		LEVEL 0 FOR 110.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 860.0;
 	}
 }
 
@@ -217,21 +199,13 @@ TRANSITION_LIST("enter")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 50.0;
 		LEVEL 1 FOR 10.0;
 		LEVEL 0 FOR 30.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 40.0;
-		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 120.0;
-		LEVEL 1 FOR 40.0;
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 20.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 220.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 380.0;
+		LEVEL 0 FOR 870.0;
 	}
 }
 
@@ -240,11 +214,9 @@ TRANSITION_LIST("reset")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 10.0;
+		LEVEL 1 FOR 190.0;
 		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 520.0;
-		LEVEL 0 FOR 50.0;
-		LEVEL 1 FOR 410.0;
+		LEVEL 1 FOR 800.0;
 	}
 }
 
@@ -262,22 +234,12 @@ TRANSITION_LIST("code_lock_simple_fsm:code_lock_fsm|present_state")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL present_state.idle FOR 75.0;
-		LEVEL present_state.ev_code1 FOR 10.0;
-		LEVEL present_state.idle FOR 30.0;
-		LEVEL present_state.ev_code1 FOR 10.0;
-		LEVEL present_state.idle FOR 10.0;
-		LEVEL present_state.ev_code1 FOR 10.0;
-		LEVEL present_state.idle FOR 50.0;
-		LEVEL present_state.ev_code1 FOR 10.0;
-		LEVEL present_state.idle FOR 130.0;
-		LEVEL present_state.ev_code1 FOR 10.0;
-		LEVEL present_state.idle FOR 70.0;
-		LEVEL present_state.ev_code1 FOR 10.0;
-		LEVEL present_state.get_code2 FOR 115.0;
-		LEVEL present_state.idle FOR 105.0;
-		LEVEL present_state.ev_code1 FOR 10.0;
-		LEVEL present_state.get_code2 FOR 345.0;
+		LEVEL present_state.idle FOR 110.0;
+		LEVEL present_state.ev_code1 FOR 20.0;
+		LEVEL present_state.wrong_code FOR 20.0;
+		LEVEL present_state.permanently_locked FOR 20.0;
+		LEVEL Undefined FOR 20.0;
+		LEVEL present_state.idle FOR 810.0;
 	}
 }
 

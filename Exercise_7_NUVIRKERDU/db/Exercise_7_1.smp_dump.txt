@@ -1,9 +1,17 @@
 
+State Machine - |code_lock_tester|code_lock_simple:clt|wrong_code:wrong_code|present_state
+Name present_state.err_3 present_state.err_2 present_state.err_1 present_state.err_0 
+present_state.err_0 0 0 0 0 
+present_state.err_1 0 0 1 1 
+present_state.err_2 0 1 0 1 
+present_state.err_3 1 0 0 1 
+
 State Machine - |code_lock_tester|code_lock_simple:clt|code_lock_simple_fsm:code_lock_fsm|present_state
-Name present_state.unlocked present_state.ev_code2 present_state.get_code2 present_state.ev_code1 present_state.locked present_state.idle 
-present_state.idle 0 0 0 0 0 0 
-present_state.locked 0 0 0 0 1 1 
-present_state.ev_code1 0 0 0 1 0 1 
-present_state.get_code2 0 0 1 0 0 1 
-present_state.ev_code2 0 1 0 0 0 1 
-present_state.unlocked 1 0 0 0 0 1 
+Name present_state.permanently_locked present_state.wrong_code present_state.unlocked present_state.ev_code2 present_state.get_code2 present_state.ev_code1 present_state.idle 
+present_state.idle 0 0 0 0 0 0 0 
+present_state.ev_code1 0 0 0 0 0 1 1 
+present_state.get_code2 0 0 0 0 1 0 1 
+present_state.ev_code2 0 0 0 1 0 0 1 
+present_state.unlocked 0 0 1 0 0 0 1 
+present_state.wrong_code 0 1 0 0 0 0 1 
+present_state.permanently_locked 1 0 0 0 0 0 1 

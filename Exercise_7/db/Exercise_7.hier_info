@@ -1,16 +1,17 @@
 |code_lock_tester
-SW[0] => code_lock_simple:clt.code[0]
-SW[1] => code_lock_simple:clt.code[1]
-SW[2] => code_lock_simple:clt.code[2]
-SW[3] => code_lock_simple:clt.code[3]
-KEY[0] => code_lock_simple:clt.enter
-KEY[1] => code_lock_simple:clt.reset
-CLOCK_50 => code_lock_simple:clt.clk
-LEDG[0] <= code_lock_simple:clt.lock
-LEDG[1] <= code_lock_simple:clt.failed
+SW[0] => code_lock:clt.code[0]
+SW[1] => code_lock:clt.code[1]
+SW[2] => code_lock:clt.code[2]
+SW[3] => code_lock:clt.code[3]
+KEY[0] => code_lock:clt.enter
+KEY[1] => code_lock:clt.reset
+CLOCK_50 => code_lock:clt.clk
+LEDG[0] <= code_lock:clt.lock
+LEDG[1] <= code_lock:clt.failed
+LEDG[2] <= <GND>
 
 
-|code_lock_tester|code_lock_simple:clt
+|code_lock_tester|code_lock:clt
 clk => synch:synchronizer.clk
 clk => code_lock_simple_fsm:code_lock_fsm.clk
 clk => wrong_code:wrong_code.clk
@@ -25,7 +26,7 @@ lock <= code_lock_simple_fsm:code_lock_fsm.lock
 failed <= wrong_code:wrong_code.failed
 
 
-|code_lock_tester|code_lock_simple:clt|synch:synchronizer
+|code_lock_tester|code_lock:clt|synch:synchronizer
 async_sig => \sync1:resync[1].DATAIN
 clk => synced~reg0.CLK
 clk => rise~reg0.CLK
@@ -38,15 +39,21 @@ fall <= fall~reg0.DB_MAX_OUTPUT_PORT_TYPE
 synced <= synced~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|code_lock_tester|code_lock_simple:clt|code_lock_simple_fsm:code_lock_fsm
-clk => present_state~1.DATAIN
-reset => present_state~3.DATAIN
-enter => Selector8.IN1
-enter => Selector14.IN5
-enter => Selector0.IN2
-enter => Selector10.IN2
-enter => Selector14.IN1
-enter => Selector12.IN1
+|code_lock_tester|code_lock:clt|code_lock_simple_fsm:code_lock_fsm
+clk => err_event~reg0.CLK
+clk => state~7.DATAIN
+reset => state~9.DATAIN
+reset => err_event~reg0.ENA
+enter => state.OUTPUTSELECT
+enter => state.OUTPUTSELECT
+enter => state.OUTPUTSELECT
+enter => state.OUTPUTSELECT
+enter => state.OUTPUTSELECT
+enter => state.OUTPUTSELECT
+enter => state.OUTPUTSELECT
+enter => state.OUTPUTSELECT
+enter => state.OUTPUTSELECT
+enter => state.OUTPUTSELECT
 code[0] => Equal0.IN3
 code[0] => Equal1.IN3
 code[1] => Equal0.IN2
@@ -63,19 +70,22 @@ code2[0] => Equal1.IN7
 code2[1] => Equal1.IN6
 code2[2] => Equal1.IN5
 code2[3] => Equal1.IN4
-failed => Selector4.IN1
-failed => Selector14.IN2
+failed => Selector6.IN5
+failed => Selector0.IN4
 lock <= lock.DB_MAX_OUTPUT_PORT_TYPE
-err_event <= err_event$latch.DB_MAX_OUTPUT_PORT_TYPE
+err_event <= err_event~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|code_lock_tester|code_lock_simple:clt|wrong_code:wrong_code
-err_event => Selector2.IN1
-err_event => Selector0.IN1
-err_event => Selector4.IN1
-err_event => next_state.err_0_91.DATAIN
-clk => present_state~1.DATAIN
-reset => present_state~3.DATAIN
+|code_lock_tester|code_lock:clt|wrong_code:wrong_code
+err_event => state.OUTPUTSELECT
+err_event => state.OUTPUTSELECT
+err_event => state.OUTPUTSELECT
+err_event => state.OUTPUTSELECT
+err_event => state.OUTPUTSELECT
+err_event => state.OUTPUTSELECT
+err_event => state.OUTPUTSELECT
+clk => state~5.DATAIN
+reset => state~7.DATAIN
 failed <= failed.DB_MAX_OUTPUT_PORT_TYPE
 
 
