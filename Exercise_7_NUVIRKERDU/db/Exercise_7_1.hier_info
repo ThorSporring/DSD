@@ -1,4 +1,16 @@
-|Code_lock_simple
+|code_lock_tester
+SW[0] => code_lock_simple:clt.code[0]
+SW[1] => code_lock_simple:clt.code[1]
+SW[2] => code_lock_simple:clt.code[2]
+SW[3] => code_lock_simple:clt.code[3]
+KEY[0] => code_lock_simple:clt.enter
+KEY[1] => code_lock_simple:clt.reset
+CLOCK_50 => code_lock_simple:clt.clk
+LEDG[0] <= code_lock_simple:clt.lock
+LEDG[1] <= <GND>
+
+
+|code_lock_tester|code_lock_simple:clt
 clk => synch:synchronizer.clk
 clk => code_lock_simple_fsm:code_lock_fsm.clk
 reset => code_lock_simple_fsm:code_lock_fsm.reset
@@ -10,7 +22,7 @@ enter => synch:synchronizer.async_sig
 lock <= code_lock_simple_fsm:code_lock_fsm.lock
 
 
-|Code_lock_simple|synch:synchronizer
+|code_lock_tester|code_lock_simple:clt|synch:synchronizer
 async_sig => \sync1:resync[1].DATAIN
 clk => synced~reg0.CLK
 clk => rise~reg0.CLK
@@ -23,7 +35,7 @@ fall <= fall~reg0.DB_MAX_OUTPUT_PORT_TYPE
 synced <= synced~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Code_lock_simple|code_lock_simple_fsm:code_lock_fsm
+|code_lock_tester|code_lock_simple:clt|code_lock_simple_fsm:code_lock_fsm
 clk => present_state~1.DATAIN
 reset => present_state~3.DATAIN
 enter => Selector0.IN5

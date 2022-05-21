@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Exercise_7_code_lock
-Tue May 17 11:59:14 2022
+Sat May 21 08:34:22 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,11 +13,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state
+  8. State Machine - |code_lock_tester|code_lock_simple:clt|code_lock_simple_fsm:code_lock_fsm|present_state
   9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Port Connectivity Checks: "code_lock_simple_fsm:code_lock_fsm"
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "code_lock_simple:clt|code_lock_simple_fsm:code_lock_fsm"
+ 12. Port Connectivity Checks: "code_lock_simple:clt|synch:synchronizer"
  13. Elapsed Time Per Partition
  14. Analysis & Synthesis Messages
 
@@ -45,16 +45,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 17 11:59:14 2022           ;
+; Analysis & Synthesis Status        ; Successful - Sat May 21 08:34:22 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Exercise_7_code_lock                            ;
-; Top-level Entity Name              ; code_lock_simple                                ;
+; Top-level Entity Name              ; code_lock_tester                                ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 8                                               ;
+; Total logic elements               ; 13                                              ;
+;     Total combinational functions  ; 11                                              ;
+;     Dedicated logic registers      ; 9                                               ;
+; Total registers                    ; 9                                               ;
+; Total pins                         ; 9                                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -68,7 +68,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value        ;
 +----------------------------------------------------------------------------+--------------------+----------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                      ;
-; Top-level entity name                                                      ; Code_lock_simple   ; Exercise_7_code_lock ;
+; Top-level entity name                                                      ; code_lock_tester   ; Exercise_7_code_lock ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX        ;
 ; Use smart compilation                                                      ; Off                ; Off                  ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                   ;
@@ -170,44 +170,52 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 8     ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-+---------------------------------------------+-------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 13       ;
+;                                             ;          ;
+; Total combinational functions               ; 11       ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 4        ;
+;     -- 3 input functions                    ; 1        ;
+;     -- <=2 input functions                  ; 6        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 11       ;
+;     -- arithmetic mode                      ; 0        ;
+;                                             ;          ;
+; Total registers                             ; 9        ;
+;     -- Dedicated logic registers            ; 9        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 9        ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 9        ;
+; Total fan-out                               ; 54       ;
+; Average fan-out                             ; 1.86     ;
++---------------------------------------------+----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |code_lock_simple          ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |code_lock_simple   ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                               ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Library Name ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
+; |code_lock_tester                          ; 11 (0)            ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |code_lock_tester                                                         ; work         ;
+;    |code_lock_simple:clt|                  ; 11 (0)            ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |code_lock_tester|code_lock_simple:clt                                    ; work         ;
+;       |code_lock_simple_fsm:code_lock_fsm| ; 9 (9)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |code_lock_tester|code_lock_simple:clt|code_lock_simple_fsm:code_lock_fsm ; work         ;
+;       |synch:synchronizer|                 ; 2 (2)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |code_lock_tester|code_lock_simple:clt|synch:synchronizer                 ; work         ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state                                                                                       ;
+; State Machine - |code_lock_tester|code_lock_simple:clt|code_lock_simple_fsm:code_lock_fsm|present_state                                                                  ;
 +-------------------------+------------------------+------------------------+-------------------------+------------------------+----------------------+--------------------+
 ; Name                    ; present_state.unlocked ; present_state.ev_code2 ; present_state.get_code2 ; present_state.ev_code1 ; present_state.locked ; present_state.idle ;
 +-------------------------+------------------------+------------------------+-------------------------+------------------------+----------------------+--------------------+
@@ -220,30 +228,14 @@ Encoding Type:  One-Hot
 +-------------------------+------------------------+------------------------+-------------------------+------------------------+----------------------+--------------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                  ;
-+------------------------------------------------------------+----------------------------------------+
-; Register name                                              ; Reason for Removal                     ;
-+------------------------------------------------------------+----------------------------------------+
-; synch:synchronizer|Enter_rising                            ; Stuck at GND due to stuck port data_in ;
-; code_lock_simple_fsm:code_lock_fsm|present_state.locked    ; Stuck at GND due to stuck port data_in ;
-; code_lock_simple_fsm:code_lock_fsm|present_state.ev_code1  ; Stuck at GND due to stuck port data_in ;
-; code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2  ; Stuck at GND due to stuck port data_in ;
-; code_lock_simple_fsm:code_lock_fsm|present_state.idle      ; Lost fanout                            ;
-; code_lock_simple_fsm:code_lock_fsm|present_state.get_code2 ; Lost fanout                            ;
-; code_lock_simple_fsm:code_lock_fsm|present_state.unlocked  ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 7                      ;                                        ;
-+------------------------------------------------------------+----------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                       ;
-+-----------------------------------------------------------+---------------------------+-----------------------------------------------------------+
-; Register name                                             ; Reason for Removal        ; Registers Removed due to This Register                    ;
-+-----------------------------------------------------------+---------------------------+-----------------------------------------------------------+
-; code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2 ; Stuck at GND              ; code_lock_simple_fsm:code_lock_fsm|present_state.unlocked ;
-;                                                           ; due to stuck port data_in ;                                                           ;
-+-----------------------------------------------------------+---------------------------+-----------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                    ;
++------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                ; Reason for Removal                     ;
++------------------------------------------------------------------------------+----------------------------------------+
+; code_lock_simple:clt|code_lock_simple_fsm:code_lock_fsm|present_state.locked ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1                                        ;                                        ;
++------------------------------------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -251,26 +243,36 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 9     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 5     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "code_lock_simple_fsm:code_lock_fsm" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; code1[3..2] ; Input ; Info     ; Stuck at VCC                  ;
-; code1[1..0] ; Input ; Info     ; Stuck at GND                  ;
-; code2[3..1] ; Input ; Info     ; Stuck at VCC                  ;
-; code2[0]    ; Input ; Info     ; Stuck at GND                  ;
-+-------------+-------+----------+-------------------------------+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "code_lock_simple:clt|code_lock_simple_fsm:code_lock_fsm" ;
++-------------+-------+----------+----------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                            ;
++-------------+-------+----------+----------------------------------------------------+
+; code1[3..2] ; Input ; Info     ; Stuck at VCC                                       ;
+; code1[1..0] ; Input ; Info     ; Stuck at GND                                       ;
+; code2[3..1] ; Input ; Info     ; Stuck at VCC                                       ;
+; code2[0]    ; Input ; Info     ; Stuck at GND                                       ;
++-------------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "code_lock_simple:clt|synch:synchronizer"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; fall   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; synced ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -288,7 +290,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue May 17 11:59:12 2022
+    Info: Processing started: Sat May 21 08:34:20 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Exercise_7_code_lock -c Exercise_7_code_lock
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file code_lock_tester.vhd
@@ -298,39 +300,30 @@ Info (12021): Found 2 design units, including 1 entities, in source file code_lo
     Info (12022): Found design unit 1: code_lock_simple-code_lock_simple_impl
     Info (12023): Found entity 1: code_lock_simple
 Info (12021): Found 2 design units, including 1 entities, in source file synch.vhd
-    Info (12022): Found design unit 1: synch-synch_impl
+    Info (12022): Found design unit 1: synch-RTL
     Info (12023): Found entity 1: synch
 Info (12021): Found 2 design units, including 1 entities, in source file code_lock_simple_fsm.vhd
     Info (12022): Found design unit 1: code_lock_simple_fsm-code_lock_simple_fsm_impl
     Info (12023): Found entity 1: code_lock_simple_fsm
-Info (12127): Elaborating entity "Code_lock_simple" for the top level hierarchy
-Info (12129): Elaborating entity "synch" using architecture "A:synch_impl" for hierarchy "synch:synchronizer"
-Warning (10631): VHDL Process Statement warning at synch.vhd(20): inferring latch(es) for signal or variable "resync", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "sync1:resync[3]" at synch.vhd(23)
-Info (10041): Inferred latch for "sync1:resync[2]" at synch.vhd(23)
-Info (12129): Elaborating entity "code_lock_simple_fsm" using architecture "A:code_lock_simple_fsm_impl" for hierarchy "code_lock_simple_fsm:code_lock_fsm"
-Warning (10492): VHDL Process Statement warning at code_lock_simple_fsm.vhd(23): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at code_lock_simple_fsm.vhd(54): signal "code1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at code_lock_simple_fsm.vhd(66): signal "code2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12127): Elaborating entity "code_lock_tester" for the top level hierarchy
+Warning (10873): Using initial value X (don't care) for net "LEDG[1]" at code_lock_tester.vhd(9)
+Info (12129): Elaborating entity "code_lock_simple" using architecture "A:code_lock_simple_impl" for hierarchy "code_lock_simple:clt"
+Info (12129): Elaborating entity "synch" using architecture "A:rtl" for hierarchy "code_lock_simple:clt|synch:synchronizer"
+Info (12129): Elaborating entity "code_lock_simple_fsm" using architecture "A:code_lock_simple_fsm_impl" for hierarchy "code_lock_simple:clt|code_lock_simple_fsm:code_lock_fsm"
+Warning (10492): VHDL Process Statement warning at code_lock_simple_fsm.vhd(26): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at code_lock_simple_fsm.vhd(58): signal "code1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at code_lock_simple_fsm.vhd(70): signal "code2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lock" is stuck at VCC
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "enter"
-    Warning (15610): No output dependent on input pin "code[0]"
-    Warning (15610): No output dependent on input pin "code[1]"
-    Warning (15610): No output dependent on input pin "code[2]"
-    Warning (15610): No output dependent on input pin "code[3]"
-    Warning (15610): No output dependent on input pin "clk"
-    Warning (15610): No output dependent on input pin "reset"
-Info (21057): Implemented 8 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 22 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 1 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4645 megabytes
-    Info: Processing ended: Tue May 17 11:59:14 2022
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 13 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4644 megabytes
+    Info: Processing ended: Sat May 21 08:34:22 2022
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

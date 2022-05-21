@@ -8,7 +8,7 @@ Z1 !s100 UV<zmemlDXO4`zOAl=Ffm1
 Z2 Ib2AmJZ^2<7081fB=4L5fN0
 Z3 V@S0NGHDH:JE^M;naDPf2i1
 Z4 dC:\Users\tobia\OneDrive\Dokumenter\GitHub\DSD\Exercise_7\simulation\qsim
-Z5 w1652781623
+Z5 w1653114996
 Z6 8Exercise7.vo
 Z7 FExercise7.vo
 L0 31
@@ -19,7 +19,7 @@ Z9 !s90 -work|work|Exercise7.vo|
 Z10 o-work work -O0
 !i10b 1
 !s85 0
-Z11 !s108 1652781623.785000
+Z11 !s108 1653114997.320000
 Z12 !s107 Exercise7.vo|
 !s101 -O0
 vcode_lock_simple_vlg_check_tst
@@ -28,7 +28,7 @@ Z13 !s100 JA61Cd4a6K`ZD]1d_3iD=0
 Z14 I:DQToUB1ADGdY7=]<2YP[1
 Z15 V=n1^V9lG19JJdDfVS_B3B0
 R4
-Z16 w1652781622
+Z16 w1653114995
 Z17 8Exercise7.vt
 Z18 FExercise7.vt
 L0 63
@@ -36,7 +36,7 @@ R8
 r1
 !s85 0
 31
-Z19 !s108 1652781623.945000
+Z19 !s108 1653114997.430000
 Z20 !s107 Exercise7.vt|
 Z21 !s90 -work|work|Exercise7.vt|
 !s101 -O0
@@ -62,14 +62,14 @@ R21
 R10
 vcode_lock_simple_vlg_vec_tst
 !i10b 1
-Z25 !s100 PSnW]4FNj2MLEbjb_Bl[53
-Z26 IF]Zke3<P`8g7EiFP`M?U11
-Z27 VTJ96QX:3@8VdTf5lTgUh<1
+!s100 ?]dob:8HCL=j;oI``a43P3
+IPS]2kmE3_41I>WLQ74X`50
+Z25 VTJ96QX:3@8VdTf5lTgUh<1
 R4
 R16
 R17
 R18
-Z28 L0 158
+Z26 L0 158
 R8
 r1
 !s85 0
@@ -80,11 +80,11 @@ R21
 !s101 -O0
 R10
 vmeemoo_tester
-Z29 !s100 JBm]OJ49Q5Sd4k^[[FRC00
-Z30 IeCjP6MFWH[3Md1aKob=Wh3
-Z31 V?El_efXFDON42]kZVPI>i1
+Z27 !s100 JBm]OJ49Q5Sd4k^[[FRC00
+Z28 IeCjP6MFWH[3Md1aKob=Wh3
+Z29 V?El_efXFDON42]kZVPI>i1
 R4
-Z32 w1652175979
+Z30 w1652175979
 R6
 R7
 L0 31
@@ -93,63 +93,63 @@ r1
 31
 R9
 R10
-Z33 !s108 1652175980.576000
+Z31 !s108 1652175980.576000
 R12
 !i10b 1
 !s85 0
 !s101 -O0
 vmeemoo_tester_vlg_check_tst
-Z34 !s100 A5JbbnGb_86=Zoa?gc5EL3
-Z35 IUdeJRY4d=FCS^=LWdAb?V1
-Z36 V9JoPXZJD<0J>Hb^[gT^hK3
+Z32 !s100 A5JbbnGb_86=Zoa?gc5EL3
+Z33 IUdeJRY4d=FCS^=LWdAb?V1
+Z34 V9JoPXZJD<0J>Hb^[gT^hK3
 R4
-R32
+R30
 R17
 R18
 L0 59
 R8
 r1
 31
-Z37 !s108 1652175980.677000
-Z38 !s107 Exercise7.vt|
+Z35 !s108 1652175980.677000
+Z36 !s107 Exercise7.vt|
 R21
 R10
 !i10b 1
 !s85 0
 !s101 -O0
 vmeemoo_tester_vlg_sample_tst
-Z39 !s100 OP`zkfQ]<ZFz<S@]zjK440
-Z40 IY[2BA7E]m1`z2EdU0WQYd0
-Z41 VRX^lEafHnW_@VDeO_fSz83
+Z37 !s100 OP`zkfQ]<ZFz<S@]zjK440
+Z38 IY[2BA7E]m1`z2EdU0WQYd0
+Z39 VRX^lEafHnW_@VDeO_fSz83
 R4
-R32
+R30
 R17
 R18
 L0 29
 R8
 r1
 31
-R37
-R38
+R35
+R36
 R21
 R10
 !i10b 1
 !s85 0
 !s101 -O0
 vmeemoo_tester_vlg_vec_tst
-Z42 !s100 iET2bbb8m2D<V1a3LVnIM2
-Z43 I^H]Lao5L^1kG9POLgcdk22
-Z44 VHY^iU6@O>f392Xk:TEU;Q1
+Z40 !s100 iET2bbb8m2D<V1a3LVnIM2
+Z41 I^H]Lao5L^1kG9POLgcdk22
+Z42 VHY^iU6@O>f392Xk:TEU;Q1
 R4
-R32
+R30
 R17
 R18
-Z45 L0 173
+Z43 L0 173
 R8
 r1
 31
-R37
-R38
+R35
+R36
 R21
 R10
 !i10b 1

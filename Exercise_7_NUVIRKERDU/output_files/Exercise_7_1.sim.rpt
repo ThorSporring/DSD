@@ -1,5 +1,5 @@
 Simulator report for Exercise_7_1
-Tue May 17 12:11:06 2022
+Fri May 20 21:41:28 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -45,41 +45,41 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 33 nodes     ;
-; Simulation Coverage         ;      25.00 % ;
-; Total Number of Transitions ; 191          ;
+; Simulation Netlist Size     ; 31 nodes     ;
+; Simulation Coverage         ;      96.77 % ;
+; Total Number of Transitions ; 403          ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulator Settings                                                                                                                                                       ;
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------+---------------+
-; Option                                                                                     ; Setting                                                     ; Default Value ;
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------+---------------+
-; Simulation mode                                                                            ; Functional                                                  ; Timing        ;
-; Start time                                                                                 ; 0 ns                                                        ; 0 ns          ;
-; Simulation results format                                                                  ; VWF                                                         ;               ;
-; Vector input source                                                                        ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Waveform2.vwf ;               ;
-; Add pins automatically to simulation output waveforms                                      ; On                                                          ; On            ;
-; Check outputs                                                                              ; Off                                                         ; Off           ;
-; Report simulation coverage                                                                 ; On                                                          ; On            ;
-; Display complete 1/0 value coverage report                                                 ; On                                                          ; On            ;
-; Display missing 1-value coverage report                                                    ; On                                                          ; On            ;
-; Display missing 0-value coverage report                                                    ; On                                                          ; On            ;
-; Detect setup and hold time violations                                                      ; Off                                                         ; Off           ;
-; Detect glitches                                                                            ; Off                                                         ; Off           ;
-; Disable timing delays in Timing Simulation                                                 ; Off                                                         ; Off           ;
-; Generate Signal Activity File                                                              ; Off                                                         ; Off           ;
-; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                         ; Off           ;
-; Group bus channels in simulation results                                                   ; Off                                                         ; Off           ;
-; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                          ; On            ;
-; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                  ; INPUT_EDGE    ;
-; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                         ; Off           ;
-; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                         ;               ;
-; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                        ; Auto          ;
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------+---------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                                        ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                                      ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                                   ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                                         ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                                          ;               ;
+; Vector input source                                                                        ; C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_7/func_sim_meemoo.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                                           ; On            ;
+; Check outputs                                                                              ; Off                                                                          ; Off           ;
+; Report simulation coverage                                                                 ; On                                                                           ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                                           ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                                           ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                                           ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                                          ; Off           ;
+; Detect glitches                                                                            ; Off                                                                          ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                                          ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                                          ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                          ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                                          ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                           ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                                   ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                          ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                          ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                         ; Auto          ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+---------------+
 
 
 +----------------------+
@@ -94,97 +94,73 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      25.00 % ;
-; Total nodes checked                                 ; 33           ;
-; Total output ports checked                          ; 32           ;
-; Total output ports with complete 1/0-value coverage ; 8            ;
-; Total output ports with no 1/0-value coverage       ; 24           ;
-; Total output ports with no 1-value coverage         ; 24           ;
-; Total output ports with no 0-value coverage         ; 24           ;
+; Total coverage as a percentage                      ;      96.77 % ;
+; Total nodes checked                                 ; 31           ;
+; Total output ports checked                          ; 31           ;
+; Total output ports with complete 1/0-value coverage ; 30           ;
+; Total output ports with no 1/0-value coverage       ; 1            ;
+; Total output ports with no 1-value coverage         ; 1            ;
+; Total output ports with no 0-value coverage         ; 1            ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                                                                                                                    ;
-+----------------------------------------------------------------------+----------------------------------------------------------------------+------------------+
-; Node Name                                                            ; Output Port Name                                                     ; Output Port Type ;
-+----------------------------------------------------------------------+----------------------------------------------------------------------+------------------+
-; |code_lock_simple|clk                                                ; |code_lock_simple|clk                                                ; out              ;
-; |code_lock_simple|code[1]                                            ; |code_lock_simple|code[1]                                            ; out              ;
-; |code_lock_simple|code[2]                                            ; |code_lock_simple|code[2]                                            ; out              ;
-; |code_lock_simple|code[3]                                            ; |code_lock_simple|code[3]                                            ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~0 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~0 ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~5 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~5 ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Equal0~0        ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Equal0~0        ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Equal1~0        ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Equal1~0        ; out0             ;
-+----------------------------------------------------------------------+----------------------------------------------------------------------+------------------+
++------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                        ;
++--------------------------------+--------------------------------+------------------+
+; Node Name                      ; Output Port Name               ; Output Port Type ;
++--------------------------------+--------------------------------+------------------+
+; |meemoo|present_state~0        ; |meemoo|present_state~0        ; out              ;
+; |meemoo|present_state~1        ; |meemoo|present_state~1        ; out              ;
+; |meemoo|present_state~2        ; |meemoo|present_state~2        ; out              ;
+; |meemoo|nxt_state_moore~0      ; |meemoo|nxt_state_moore~0      ; out0             ;
+; |meemoo|next_state~0           ; |meemoo|next_state~0           ; out              ;
+; |meemoo|next_state~1           ; |meemoo|next_state~1           ; out              ;
+; |meemoo|present_state.idle     ; |meemoo|present_state.idle     ; regout           ;
+; |meemoo|next_state.active      ; |meemoo|next_state.active      ; out              ;
+; |meemoo|outputs_mealy~0        ; |meemoo|outputs_mealy~0        ; out0             ;
+; |meemoo|present_state.init     ; |meemoo|present_state.init     ; regout           ;
+; |meemoo|present_state.active   ; |meemoo|present_state.active   ; regout           ;
+; |meemoo|mee_out~0              ; |meemoo|mee_out~0              ; out              ;
+; |meemoo|clk                    ; |meemoo|clk                    ; out              ;
+; |meemoo|a                      ; |meemoo|a                      ; out              ;
+; |meemoo|b                      ; |meemoo|b                      ; out              ;
+; |meemoo|moo_out                ; |meemoo|moo_out                ; pin_out          ;
+; |meemoo|mee_out                ; |meemoo|mee_out                ; pin_out          ;
+; |meemoo|present_state~3        ; |meemoo|present_state~3        ; out0             ;
+; |meemoo|present_state.idle~0   ; |meemoo|present_state.idle~0   ; out0             ;
+; |meemoo|moo_out~0              ; |meemoo|moo_out~0              ; out0             ;
+; |meemoo|present_state.init~0   ; |meemoo|present_state.init~0   ; out0             ;
+; |meemoo|Selector0~0            ; |meemoo|Selector0~0            ; out0             ;
+; |meemoo|present_state.active~0 ; |meemoo|present_state.active~0 ; out0             ;
+; |meemoo|Selector0~1            ; |meemoo|Selector0~1            ; out0             ;
+; |meemoo|present_state~7        ; |meemoo|present_state~7        ; out0             ;
+; |meemoo|Selector0~2            ; |meemoo|Selector0~2            ; out0             ;
+; |meemoo|Selector0~3            ; |meemoo|Selector0~3            ; out0             ;
+; |meemoo|Selector1~0            ; |meemoo|Selector1~0            ; out0             ;
+; |meemoo|Selector1~1            ; |meemoo|Selector1~1            ; out0             ;
+; |meemoo|Selector1~2            ; |meemoo|Selector1~2            ; out0             ;
++--------------------------------+--------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Missing 1-Value Coverage                                                                                                                                                       ;
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------+------------------+
-; Node Name                                                                    ; Output Port Name                                                             ; Output Port Type ;
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------+------------------+
-; |code_lock_simple|reset                                                      ; |code_lock_simple|reset                                                      ; out              ;
-; |code_lock_simple|code[0]                                                    ; |code_lock_simple|code[0]                                                    ; out              ;
-; |code_lock_simple|lock                                                       ; |code_lock_simple|lock                                                       ; pin_out          ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.locked    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.locked    ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.idle      ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.idle      ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code1  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code1  ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2 ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2  ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked  ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~1         ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~1         ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~0             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~0             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~1             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~1             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~2             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~2             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~3             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~3             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~4             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~4             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|lock~0                  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|lock~0                  ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~9         ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~9         ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~5             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~5             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~6             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~6             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~7             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~7             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~0             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~0             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~1             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~1             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector2~0             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector2~0             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector2~1             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector2~1             ; out0             ;
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------+------------------+
++-----------------------------------------------------+
+; Missing 1-Value Coverage                            ;
++---------------+------------------+------------------+
+; Node Name     ; Output Port Name ; Output Port Type ;
++---------------+------------------+------------------+
+; |meemoo|reset ; |meemoo|reset    ; out              ;
++---------------+------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                                                                                                                                       ;
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------+------------------+
-; Node Name                                                                    ; Output Port Name                                                             ; Output Port Type ;
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------+------------------+
-; |code_lock_simple|reset                                                      ; |code_lock_simple|reset                                                      ; out              ;
-; |code_lock_simple|code[0]                                                    ; |code_lock_simple|code[0]                                                    ; out              ;
-; |code_lock_simple|lock                                                       ; |code_lock_simple|lock                                                       ; pin_out          ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.locked    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.locked    ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.idle      ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.idle      ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code1  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code1  ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2 ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2  ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked  ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~1         ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~1         ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~0             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~0             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~1             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~1             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~2             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~2             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~3             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~3             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~4             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~4             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|lock~0                  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|lock~0                  ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~9         ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~9         ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~5             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~5             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~6             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~6             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~7             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector0~7             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~0             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~0             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~1             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~1             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector2~0             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector2~0             ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector2~1             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector2~1             ; out0             ;
-+------------------------------------------------------------------------------+------------------------------------------------------------------------------+------------------+
++-----------------------------------------------------+
+; Missing 0-Value Coverage                            ;
++---------------+------------------+------------------+
+; Node Name     ; Output Port Name ; Output Port Type ;
++---------------+------------------+------------------+
+; |meemoo|reset ; |meemoo|reset    ; out              ;
++---------------+------------------+------------------+
 
 
 +---------------------+
@@ -200,19 +176,21 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue May 17 12:11:05 2022
+    Info: Processing started: Fri May 20 21:41:28 2022
 Info: Command: quartus_sim --simulation_results_format=VWF Exercise_7_1 -c Exercise_7_1
-Info (324025): Using vector source file "C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Waveform2.vwf"
+Info (324025): Using vector source file "C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_7/func_sim_meemoo.vwf"
+Warning (328016): Wrong node type and/or width for node "|meemoo|present_state" in vector source file. Node in design is of type Enum and of width 1, but node in vector source file is of type 9-Level and of width 1.
+Warning (328018): Signal name "|meemoo|present_state" changed to enum type
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is      25.00 %
-Info (328052): Number of transitions in simulation is 191
+Info (328053): Simulation coverage is      96.77 %
+Info (328052): Number of transitions in simulation is 403
 Info (324045): Vector file Exercise_7_1.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
-Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 4443 megabytes
-    Info: Processing ended: Tue May 17 12:11:06 2022
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Fri May 20 21:41:28 2022
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 

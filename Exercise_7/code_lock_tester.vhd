@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity code_lock_tester is
     port(
         SW: in std_logic_vector(3 downto 0);
-        KEY: in std_logic_vector(3 downto 0);
+        KEY: in std_logic_vector(1 downto 0);
 		  CLOCK_50: in std_logic;
         LEDG: out std_logic_vector(1 downto 0)
     );
