@@ -122,7 +122,17 @@ SIGNAL("lock")
 	PARENT = "";
 }
 
-SIGNAL("code_lock_simple_fsm:code_lock_fsm|present_state")
+SIGNAL("wrong_code:wrong_code|state")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+}
+
+SIGNAL("code_lock_simple_fsm:code_lock_fsm|state")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -139,9 +149,9 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
+			REPEAT = 200;
+			LEVEL 0 FOR 2.5;
+			LEVEL 1 FOR 2.5;
 		}
 	}
 }
@@ -151,9 +161,15 @@ TRANSITION_LIST("code[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 930.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 120.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 110.0;
+		LEVEL 0 FOR 470.0;
 	}
 }
 
@@ -164,7 +180,15 @@ TRANSITION_LIST("code[2]")
 		REPEAT = 1;
 		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 60.0;
-		LEVEL 0 FOR 930.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 70.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 110.0;
+		LEVEL 0 FOR 470.0;
 	}
 }
 
@@ -175,7 +199,11 @@ TRANSITION_LIST("code[1]")
 		REPEAT = 1;
 		LEVEL 0 FOR 110.0;
 		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 860.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 110.0;
+		LEVEL 0 FOR 470.0;
 	}
 }
 
@@ -193,13 +221,25 @@ TRANSITION_LIST("enter")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 10.0;
 		LEVEL 0 FOR 50.0;
 		LEVEL 1 FOR 10.0;
 		LEVEL 0 FOR 30.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 20.0;
+		LEVEL 0 FOR 30.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 870.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 90.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 70.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 470.0;
 	}
 }
 
@@ -208,9 +248,9 @@ TRANSITION_LIST("reset")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 190.0;
-		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 800.0;
+		LEVEL 1 FOR 300.0;
+		LEVEL 0 FOR 20.0;
+		LEVEL 1 FOR 680.0;
 	}
 }
 
@@ -223,12 +263,21 @@ TRANSITION_LIST("lock")
 	}
 }
 
-TRANSITION_LIST("code_lock_simple_fsm:code_lock_fsm|present_state")
+TRANSITION_LIST("wrong_code:wrong_code|state")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL U FOR 1000.0;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("code_lock_simple_fsm:code_lock_fsm|state")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -320,10 +369,19 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "code_lock_simple_fsm:code_lock_fsm|present_state";
+	CHANNEL = "wrong_code:wrong_code|state";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 9;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "code_lock_simple_fsm:code_lock_fsm|state";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
 	TREE_LEVEL = 0;
 }
 

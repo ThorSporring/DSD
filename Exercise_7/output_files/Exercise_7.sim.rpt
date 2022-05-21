@@ -1,5 +1,5 @@
 Simulator report for Exercise_7
-Sat May 21 11:30:10 2022
+Sat May 21 19:48:30 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 66 nodes     ;
-; Simulation Coverage         ;      57.58 % ;
-; Total Number of Transitions ; 394          ;
+; Simulation Netlist Size     ; 127 nodes    ;
+; Simulation Coverage         ;      78.74 % ;
+; Total Number of Transitions ; 2616         ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
@@ -94,135 +94,195 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      57.58 % ;
-; Total nodes checked                                 ; 66           ;
-; Total output ports checked                          ; 66           ;
-; Total output ports with complete 1/0-value coverage ; 38           ;
-; Total output ports with no 1/0-value coverage       ; 28           ;
-; Total output ports with no 1-value coverage         ; 28           ;
-; Total output ports with no 0-value coverage         ; 28           ;
+; Total coverage as a percentage                      ;      78.74 % ;
+; Total nodes checked                                 ; 127          ;
+; Total output ports checked                          ; 127          ;
+; Total output ports with complete 1/0-value coverage ; 100          ;
+; Total output ports with no 1/0-value coverage       ; 27           ;
+; Total output ports with no 1-value coverage         ; 27           ;
+; Total output ports with no 0-value coverage         ; 27           ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                                                                                                                                                          ;
-+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+
-; Node Name                                                                               ; Output Port Name                                                                        ; Output Port Type ;
-+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+
-; |code_lock_simple|clk                                                                   ; |code_lock_simple|clk                                                                   ; out              ;
-; |code_lock_simple|reset                                                                 ; |code_lock_simple|reset                                                                 ; out              ;
-; |code_lock_simple|code[1]                                                               ; |code_lock_simple|code[1]                                                               ; out              ;
-; |code_lock_simple|code[2]                                                               ; |code_lock_simple|code[2]                                                               ; out              ;
-; |code_lock_simple|code[3]                                                               ; |code_lock_simple|code[3]                                                               ; out              ;
-; |code_lock_simple|enter                                                                 ; |code_lock_simple|enter                                                                 ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.idle                 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.idle                 ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code1             ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code1             ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.wrong_code           ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.wrong_code           ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.wrong_code_136          ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.wrong_code_136          ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.permanently_locked_128  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.permanently_locked_128  ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr1                            ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr1                            ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.ev_code1_168            ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.ev_code1_168            ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.idle_176                ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.idle_176                ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.permanently_locked   ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.permanently_locked   ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~0                    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~0                    ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~1                    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~1                    ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.idle~0               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.idle~0               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr2~0                          ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr2~0                          ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code1~0           ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code1~0           ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~0                          ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~0                          ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.wrong_code~0         ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.wrong_code~0         ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~3                          ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~3                          ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.permanently_locked~0 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.permanently_locked~0 ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~0                        ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~0                        ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~5                    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~5                    ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~9                    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state~9                    ; out0             ;
-; |code_lock_simple|synch:synchronizer|rise~0                                             ; |code_lock_simple|synch:synchronizer|rise~0                                             ; out0             ;
-; |code_lock_simple|synch:synchronizer|rise                                               ; |code_lock_simple|synch:synchronizer|rise                                               ; regout           ;
-; |code_lock_simple|synch:synchronizer|\sync1:resync[3]                                   ; |code_lock_simple|synch:synchronizer|\sync1:resync[3]                                   ; regout           ;
-; |code_lock_simple|synch:synchronizer|\sync1:resync[2]                                   ; |code_lock_simple|synch:synchronizer|\sync1:resync[2]                                   ; regout           ;
-; |code_lock_simple|synch:synchronizer|\sync1:resync[1]                                   ; |code_lock_simple|synch:synchronizer|\sync1:resync[1]                                   ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~2                        ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~2                        ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~5                        ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~5                        ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector10~0                       ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector10~0                       ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~1                       ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~1                       ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~4                       ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~4                       ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Equal0~0                           ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Equal0~0                           ; out0             ;
-+-----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                        ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; Node Name                                                              ; Output Port Name                                                       ; Output Port Type ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
+; |code_lock|clk                                                         ; |code_lock|clk                                                         ; out              ;
+; |code_lock|reset                                                       ; |code_lock|reset                                                       ; out              ;
+; |code_lock|code[1]                                                     ; |code_lock|code[1]                                                     ; out              ;
+; |code_lock|code[2]                                                     ; |code_lock|code[2]                                                     ; out              ;
+; |code_lock|code[3]                                                     ; |code_lock|code[3]                                                     ; out              ;
+; |code_lock|enter                                                       ; |code_lock|enter                                                       ; out              ;
+; |code_lock|lock                                                        ; |code_lock|lock                                                        ; pin_out          ;
+; |code_lock|failed                                                      ; |code_lock|failed                                                      ; pin_out          ;
+; |code_lock|wrong_code:wrong_code|state~0                               ; |code_lock|wrong_code:wrong_code|state~0                               ; out              ;
+; |code_lock|wrong_code:wrong_code|state~1                               ; |code_lock|wrong_code:wrong_code|state~1                               ; out              ;
+; |code_lock|wrong_code:wrong_code|state~2                               ; |code_lock|wrong_code:wrong_code|state~2                               ; out              ;
+; |code_lock|wrong_code:wrong_code|state~3                               ; |code_lock|wrong_code:wrong_code|state~3                               ; out              ;
+; |code_lock|wrong_code:wrong_code|state~4                               ; |code_lock|wrong_code:wrong_code|state~4                               ; out              ;
+; |code_lock|wrong_code:wrong_code|state~5                               ; |code_lock|wrong_code:wrong_code|state~5                               ; out              ;
+; |code_lock|wrong_code:wrong_code|state~6                               ; |code_lock|wrong_code:wrong_code|state~6                               ; out              ;
+; |code_lock|wrong_code:wrong_code|state.err_0                           ; |code_lock|wrong_code:wrong_code|state.err_0                           ; regout           ;
+; |code_lock|wrong_code:wrong_code|state.err_1                           ; |code_lock|wrong_code:wrong_code|state.err_1                           ; regout           ;
+; |code_lock|wrong_code:wrong_code|state.err_2                           ; |code_lock|wrong_code:wrong_code|state.err_2                           ; regout           ;
+; |code_lock|wrong_code:wrong_code|state.err_3                           ; |code_lock|wrong_code:wrong_code|state.err_3                           ; regout           ;
+; |code_lock|wrong_code:wrong_code|state~7                               ; |code_lock|wrong_code:wrong_code|state~7                               ; out0             ;
+; |code_lock|wrong_code:wrong_code|state~8                               ; |code_lock|wrong_code:wrong_code|state~8                               ; out0             ;
+; |code_lock|wrong_code:wrong_code|state.err_0~0                         ; |code_lock|wrong_code:wrong_code|state.err_0~0                         ; out0             ;
+; |code_lock|wrong_code:wrong_code|state~10                              ; |code_lock|wrong_code:wrong_code|state~10                              ; out0             ;
+; |code_lock|wrong_code:wrong_code|state~12                              ; |code_lock|wrong_code:wrong_code|state~12                              ; out0             ;
+; |code_lock|wrong_code:wrong_code|state~14                              ; |code_lock|wrong_code:wrong_code|state~14                              ; out0             ;
+; |code_lock|wrong_code:wrong_code|failed                                ; |code_lock|wrong_code:wrong_code|failed                                ; out0             ;
+; |code_lock|wrong_code:wrong_code|state~20                              ; |code_lock|wrong_code:wrong_code|state~20                              ; out0             ;
+; |code_lock|wrong_code:wrong_code|state~24                              ; |code_lock|wrong_code:wrong_code|state~24                              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~0                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~0                  ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~1                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~1                  ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~2                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~2                  ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~3                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~3                  ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~4                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~4                  ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~5                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~5                  ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~6                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~6                  ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|err_event~0              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|err_event~0              ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~7                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~7                  ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~8                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~8                  ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|err_event~1              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|err_event~1              ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~9                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~9                  ; out              ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|WideOr1                  ; |code_lock|code_lock_simple_fsm:code_lock_fsm|WideOr1                  ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.idle               ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.idle               ; regout           ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.ev_code1           ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.ev_code1           ; regout           ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.get_code2          ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.get_code2          ; regout           ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.ev_code2           ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.ev_code2           ; regout           ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.unlocked           ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.unlocked           ; regout           ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.wrong_code         ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.wrong_code         ; regout           ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.permanently_locked ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state.permanently_locked ; regout           ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|err_event                ; |code_lock|code_lock_simple_fsm:code_lock_fsm|err_event                ; regout           ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~13                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~13                 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~14                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~14                 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~16                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~16                 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~18                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~18                 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~20                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~20                 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~22                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~22                 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|lock~0                   ; |code_lock|code_lock_simple_fsm:code_lock_fsm|lock~0                   ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~24                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~24                 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~26                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~26                 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~30                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~30                 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~34                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|state~34                 ; out0             ;
+; |code_lock|synch:synchronizer|rise~0                                   ; |code_lock|synch:synchronizer|rise~0                                   ; out0             ;
+; |code_lock|synch:synchronizer|rise                                     ; |code_lock|synch:synchronizer|rise                                     ; regout           ;
+; |code_lock|synch:synchronizer|\sync1:resync[3]                         ; |code_lock|synch:synchronizer|\sync1:resync[3]                         ; regout           ;
+; |code_lock|synch:synchronizer|\sync1:resync[2]                         ; |code_lock|synch:synchronizer|\sync1:resync[2]                         ; regout           ;
+; |code_lock|synch:synchronizer|\sync1:resync[1]                         ; |code_lock|synch:synchronizer|\sync1:resync[1]                         ; regout           ;
+; |code_lock|wrong_code:wrong_code|Selector0~0                           ; |code_lock|wrong_code:wrong_code|Selector0~0                           ; out              ;
+; |code_lock|wrong_code:wrong_code|Selector1~0                           ; |code_lock|wrong_code:wrong_code|Selector1~0                           ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector1~3                           ; |code_lock|wrong_code:wrong_code|Selector1~3                           ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector1~4                           ; |code_lock|wrong_code:wrong_code|Selector1~4                           ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector2~0                           ; |code_lock|wrong_code:wrong_code|Selector2~0                           ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector2~2                           ; |code_lock|wrong_code:wrong_code|Selector2~2                           ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector2~3                           ; |code_lock|wrong_code:wrong_code|Selector2~3                           ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector3~0                           ; |code_lock|wrong_code:wrong_code|Selector3~0                           ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector3~1                           ; |code_lock|wrong_code:wrong_code|Selector3~1                           ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector3~3                           ; |code_lock|wrong_code:wrong_code|Selector3~3                           ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~0              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~0              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~2              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~2              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~3              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~3              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~5              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~5              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~0              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~0              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~4              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~4              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~0              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~0              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~3              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~3              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~4              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~4              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~0              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~0              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~3              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~3              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~0              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~0              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~2              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~2              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~3              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~3              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~5              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~5              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~0              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~0              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~5              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~5              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~6              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~6              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~0              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~0              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~1              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~1              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~4              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~4              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~0              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~0              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~2              ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~2              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Equal0~0                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Equal0~0                 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Equal1~0                 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Equal1~0                 ; out0             ;
++------------------------------------------------------------------------+------------------------------------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Missing 1-Value Coverage                                                                                                                                                           ;
-+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
-; Node Name                                                                      ; Output Port Name                                                               ; Output Port Type ;
-+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
-; |code_lock_simple|code[0]                                                      ; |code_lock_simple|code[0]                                                      ; out              ;
-; |code_lock_simple|lock                                                         ; |code_lock_simple|lock                                                         ; pin_out          ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2   ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2   ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2    ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked    ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.ev_code2_152   ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.ev_code2_152   ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.get_code2_160  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.get_code2_160  ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.unlocked_144   ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.unlocked_144   ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2~0 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2~0 ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~1                 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~1                 ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2~0  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2~0  ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~2                 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~2                 ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked~0  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked~0  ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|lock~0                    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|lock~0                    ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~0               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~0               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~0               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~0               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~1               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~1               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~2               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~2               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~3               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~3               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~3               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~3               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~4               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~4               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~1               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~1               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~2               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~2               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~3               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~3               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~4               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~4               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~2              ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~2              ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~3              ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~3              ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Equal1~0                  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Equal1~0                  ; out0             ;
-+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                 ;
++-----------------------------------------------------------+-----------------------------------------------------------+------------------+
+; Node Name                                                 ; Output Port Name                                          ; Output Port Type ;
++-----------------------------------------------------------+-----------------------------------------------------------+------------------+
+; |code_lock|code[0]                                        ; |code_lock|code[0]                                        ; out              ;
+; |code_lock|wrong_code:wrong_code|Selector1~1              ; |code_lock|wrong_code:wrong_code|Selector1~1              ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector1~2              ; |code_lock|wrong_code:wrong_code|Selector1~2              ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector2~1              ; |code_lock|wrong_code:wrong_code|Selector2~1              ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector2~4              ; |code_lock|wrong_code:wrong_code|Selector2~4              ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector3~2              ; |code_lock|wrong_code:wrong_code|Selector3~2              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~4 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~4 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~2 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~2 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~3 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~3 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~2 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~2 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~5 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~5 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~2 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~2 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~4 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~4 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~4 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~4 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~2 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~2 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~3 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~3 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~4 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~4 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~2 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~2 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~3 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~3 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~3 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~3 ; out0             ;
++-----------------------------------------------------------+-----------------------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                                                                                                                                           ;
-+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
-; Node Name                                                                      ; Output Port Name                                                               ; Output Port Type ;
-+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
-; |code_lock_simple|code[0]                                                      ; |code_lock_simple|code[0]                                                      ; out              ;
-; |code_lock_simple|lock                                                         ; |code_lock_simple|lock                                                         ; pin_out          ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2   ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2   ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2    ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked    ; regout           ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.ev_code2_152   ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.ev_code2_152   ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.get_code2_160  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.get_code2_160  ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.unlocked_144   ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|next_state.unlocked_144   ; out              ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2~0 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.get_code2~0 ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~1                 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~1                 ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2~0  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.ev_code2~0  ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~2                 ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|WideOr0~2                 ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked~0  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state.unlocked~0  ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|lock~0                    ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|lock~0                    ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~0               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector1~0               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~0               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~0               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~1               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~1               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~2               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~2               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~3               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector3~3               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~3               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~3               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~4               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector5~4               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~1               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~1               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~2               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~2               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~3               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~3               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~4               ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector8~4               ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~2              ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~2              ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~3              ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Selector12~3              ; out0             ;
-; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Equal1~0                  ; |code_lock_simple|code_lock_simple_fsm:code_lock_fsm|Equal1~0                  ; out0             ;
-+--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                 ;
++-----------------------------------------------------------+-----------------------------------------------------------+------------------+
+; Node Name                                                 ; Output Port Name                                          ; Output Port Type ;
++-----------------------------------------------------------+-----------------------------------------------------------+------------------+
+; |code_lock|code[0]                                        ; |code_lock|code[0]                                        ; out              ;
+; |code_lock|wrong_code:wrong_code|Selector1~1              ; |code_lock|wrong_code:wrong_code|Selector1~1              ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector1~2              ; |code_lock|wrong_code:wrong_code|Selector1~2              ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector2~1              ; |code_lock|wrong_code:wrong_code|Selector2~1              ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector2~4              ; |code_lock|wrong_code:wrong_code|Selector2~4              ; out0             ;
+; |code_lock|wrong_code:wrong_code|Selector3~2              ; |code_lock|wrong_code:wrong_code|Selector3~2              ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~4 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector0~4 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~2 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~2 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~3 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector1~3 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~2 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~2 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~5 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector2~5 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~2 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~2 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~4 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector3~4 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~4 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector4~4 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~2 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~2 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~3 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~3 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~4 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector5~4 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~2 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~2 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~3 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector6~3 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~1 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~1 ; out0             ;
+; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~3 ; |code_lock|code_lock_simple_fsm:code_lock_fsm|Selector7~3 ; out0             ;
++-----------------------------------------------------------+-----------------------------------------------------------+------------------+
 
 
 +---------------------+
@@ -238,21 +298,22 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat May 21 11:30:10 2022
+    Info: Processing started: Sat May 21 19:48:30 2022
 Info: Command: quartus_sim --simulation_results_format=VWF Exercise_7 -c Exercise_7
 Info (324025): Using vector source file "C:/Users/tobia/OneDrive/Dokumenter/GitHub/DSD/Exercise_7/output_files/func_sim_wrong_code1.vwf"
-Warning (328016): Wrong node type and/or width for node "|code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state" in vector source file. Node in design is of type Enum and of width 1, but node in vector source file is of type 9-Level and of width 1.
-Warning (328018): Signal name "|code_lock_simple|code_lock_simple_fsm:code_lock_fsm|present_state" changed to enum type
+Warning (328016): Wrong node type and/or width for node "|code_lock|wrong_code:wrong_code|state" in vector source file. Node in design is of type Enum and of width 1, but node in vector source file is of type 9-Level and of width 1.
+Warning (328018): Signal name "|code_lock|wrong_code:wrong_code|state" changed to enum type
+Warning (328016): Wrong node type and/or width for node "|code_lock|code_lock_simple_fsm:code_lock_fsm|state" in vector source file. Node in design is of type Enum and of width 1, but node in vector source file is of type 9-Level and of width 1.
+Warning (328018): Signal name "|code_lock|code_lock_simple_fsm:code_lock_fsm|state" changed to enum type
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
-Warning (324036): Found clock-sensitive change during active clock edge at time 50.0 ns on register "|code_lock_simple|synch:synchronizer|\sync1:resync[1]"
 Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is      57.58 %
-Info (328052): Number of transitions in simulation is 394
+Info (328053): Simulation coverage is      78.74 %
+Info (328052): Number of transitions in simulation is 2616
 Info (324045): Vector file Exercise_7.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
-Info: Quartus II 64-Bit Simulator was successful. 0 errors, 3 warnings
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4443 megabytes
-    Info: Processing ended: Sat May 21 11:30:10 2022
+    Info: Processing ended: Sat May 21 19:48:30 2022
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
