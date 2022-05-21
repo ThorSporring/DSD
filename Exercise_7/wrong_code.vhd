@@ -28,7 +28,7 @@ begin
 				state <= err_0;
 			elsif (rising_edge(clk)) then
 				case state is
-					when err_0 =>
+					TIl when err_0 =>
 						if err_event='1' then
 							state <= err_1;
 						end if;
