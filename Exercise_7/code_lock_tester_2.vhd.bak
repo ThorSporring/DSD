@@ -11,13 +11,13 @@ entity code_lock_tester is
 end code_lock_tester;
 	 
 architecture code_lock_tester_impl of code_lock_tester is
-	begin
-		clt: entity work.code_lock(code_lock_impl) port map(
-			enter => KEY(0),
-			reset => KEY(1),
-			code => SW(3 downto 0),
-			lock => LEDG(0),
+    begin
+        clt: entity work.code_lock(code_lock_impl) port map(
+            enter => KEY(0),
+            reset => KEY(1),
+            code => SW(3 downto 0),
+            lock => LEDG(0),
 			clk => CLOCK_50,
 			failed => LEDG(1)
-	);
+        );
 end code_lock_tester_impl;
