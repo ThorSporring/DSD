@@ -17,6 +17,7 @@ architecture code_lock_tester_impl of code_lock_tester is
             reset => KEY(1),
             code => SW(3 downto 0),
             lock => LEDG(0),
-				clk => CLOCK_50
+				clk => CLOCK_50,
+				failed => LEDG(1)
         );
 end code_lock_tester_impl;

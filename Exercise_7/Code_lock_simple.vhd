@@ -9,7 +9,8 @@ entity code_lock_simple is
 			reset : in std_logic;
 			code : in std_logic_vector(3 downto 0);
 			enter : in std_logic;
-			lock : out std_logic
+			lock : out std_logic;
+			failed: out std_logic
 			);
 end;
 
@@ -22,6 +23,8 @@ architecture code_lock_simple_impl of code_lock_simple is
 	
 	--------Interne signaler---------------------
 	signal enter_sync :std_logic;
+	signal err_event_signal: std_logic;
+	signal failed_signal: std_logic;
 	
 	begin
 
@@ -40,7 +43,18 @@ architecture code_lock_simple_impl of code_lock_simple is
 			reset => reset,
 			lock => lock,
 			clk => clk,
-			enter => enter_sync
+			enter => enter_sync,
+			err_event => err_event_signal,
+			failed => failed_signal
 		);
+		
+		wrong_code: entity work.wrong_code(wrong_code_impl) port map(
+			clk => clk,
+			reset => reset,
+			err_event => err_event_signal,
+			failed => failed_signal
+		);
+		
+		failed <= failed_signal;
 
 end code_lock_simple_impl;
